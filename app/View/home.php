@@ -1,3 +1,3 @@
 <p>
-    Seja bem vindo ao AtomPHP.
+    TESTE
 </p>
