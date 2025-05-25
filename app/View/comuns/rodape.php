@@ -1,6 +1,6 @@
         </main>
         <footer class="container-fluid">
-            AtomPHP, FASM 2025 - Disciplina de Framewokrs I'
+            Descubra Muriaé, FASM 2025 - Projeto de extensão
         </footer>
     </body>
 </html>
