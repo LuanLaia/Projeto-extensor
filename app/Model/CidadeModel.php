@@ -9,30 +9,13 @@ class CidadeModel extends ModelMain
     protected $table = "cidade";
     
     protected $validationRules = [
-        "nome"  => [
-            "label" => 'Nome',
-            "rules" => 'required|min:3|max:50'
+        "cidade"  => [
+            "label" => 'Cidade',
+            "rules" => 'required|min:3|max:200'
         ],
-        "codIBGE"  => [
-            "label" => 'Código do IBGE',
-            "rules" => 'required|min:7|max:7'
-        ],
-        "uf_id"  => [
+        "uf"  => [
             "label" => 'UF',
-            "rules" => 'required|int'
+            "rules" => 'required|min:2|max:2'
         ]
     ];
-
-    /**
-     * listaCidade
-     *
-     * @return array
-     */
-    public function listaCidade()
-    {
-        return $this->db->select("cidade.*, uf.sigla")
-                        ->join("uf", "uf.id = cidade.uf_id")
-                        ->orderby("uf.sigla, cidade.nome")
-                        ->findAll();
-    }
 }

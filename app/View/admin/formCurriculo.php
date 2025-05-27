@@ -1,11 +1,11 @@
-<?= formTitulo("Vagas") ?>
+<?= formTitulo("Curriculo") ?>
 
 <div class="m-2">
 
     <form method="POST" action="<?= $this->request->formAction() ?>">
 
         <input type="hidden" name="id" id="id" value="<?= setValor("id") ?>">
-        <input type="hidden" name="pessoa_fisica_id" id="pessoa_fisica_id" value="1">
+        <input type="hidden" name="pessoa_fisica_id" id="pessoa_fisica_id" value="1252">
 
         <div class="row">
             <div class="col-6 mb-3">

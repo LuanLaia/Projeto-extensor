@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Model\CidadeModel;
+use App\Model\CurriculoModel;
 use Core\Library\ControllerMain;
 use Core\Library\Redirect;
 
@@ -20,12 +22,18 @@ class Curriculo extends ControllerMain
      */
     public function index()
     {
-        return $this->loadView("admin\listaCurriculo", $this->model->lista(""));
+        return $this->loadView("admin\listaCurriculo", $this->model->lista("id"));
     }
 
     public function form($action, $id)
     {
-        return $this->loadView("admin/formCurriculo", $this->model->getById($id));
+        $CidadeModel = new CidadeModel();
+
+        $dados = [
+            "data" => $this->model->getById($id),
+            "aCidade" => $CidadeModel->lista()
+        ];
+        return $this->loadView("admin/formCurriculo", $dados);
     }
 
     /**
