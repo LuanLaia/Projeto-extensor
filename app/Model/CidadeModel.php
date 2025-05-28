@@ -18,4 +18,11 @@ class CidadeModel extends ModelMain
             "rules" => 'required|min:2|max:2'
         ]
     ];
+
+     public function listaCidade()
+    {
+        return $this->db->select("curriculo.cidade_id, cidade.cidade AS nome_cidade")
+                        ->join("cidade", "cidade.id = curriculo.cidade_id")
+                        ->findAll();
+    }
 }

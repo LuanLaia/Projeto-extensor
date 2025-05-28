@@ -59,4 +59,6 @@ class CurriculoModel extends ModelMain
             "rules" => ''
         ]
     ];
+
+   
 }

@@ -31,7 +31,7 @@ class Curriculo extends ControllerMain
 
         $dados = [
             "data" => $this->model->getById($id),
-            "aCidade" => $CidadeModel->lista()
+            "aCidade" => $CidadeModel->lista('cidade')
         ];
         return $this->loadView("admin/formCurriculo", $dados);
     }
