@@ -5,25 +5,30 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login</title>
   <link href="<?= baseUrl() ?>assets/css/login.css" rel="stylesheet">
+  <link href="<?= baseUrl() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
+
   <div class="background-card"></div>
   
   <div class="login-container">
     <div class="login-card">
       <a href="<?= baseUrl()?>Home" class="back-arrow">&#8592;</a>
       <h3 class="title">Login</h3>
-      <form>
+      
+      <form action="<?= baseUrl() ?>login/signIn" method="post">
         <div class="input-group">
-          <input type="email" placeholder="E-mail" required>
+          <input type="email" name="login" placeholder="E-mail" value="<?= setValor("login")?>" required autofocus>
         </div>
         <div class="input-group">
-          <input type="password" placeholder="Senha" required>
+          <input type="password" name="senha" placeholder="Senha" required>
         </div>
         <button type="submit" class="btn-login">Entrar</button>
       </form>
+       <?= exibeAlerta() ?>
+
       <p class="register-link">
-        Não tem uma conta? <a href="#">Registre-se</a>
+        Não tem uma conta? <a href="<?= baseUrl()?>Cadastro">Registre-se</a>
       </p>
     </div>
   </div>

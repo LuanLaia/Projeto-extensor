@@ -75,3 +75,36 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background: #0056b3;
 }
+
+.back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    color: #333;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    background: none;
+    z-index: 2;
+}
+
+.back-arrow:visited,
+.back-arrow:focus,
+.back-arrow:hover,
+.back-arrow:active {
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+
+.container {
+    position: relative;
+    max-width: 400px;
+    margin: 100px auto;
+    background: #fff;
+    padding: 3rem 2rem 2rem 2rem; /* aumentei o padding-top para 3rem */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
