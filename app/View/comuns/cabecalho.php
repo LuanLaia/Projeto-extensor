@@ -34,6 +34,9 @@
                         <li class="nav-item">
                         <a class="nav-link" href="<?= baseUrl() ?>Curriculo">Curriculo</a>
                         </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="<?= baseUrl() ?>Login">Login</a>
+                        </li>
                     </ul>
                     </div>
                 </div>
