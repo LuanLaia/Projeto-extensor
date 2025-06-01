@@ -11,7 +11,7 @@
   
   <div class="login-container">
     <div class="login-card">
-      <a href="pagina-anterior.php" class="back-arrow">&#8592;</a>
+      <a href="<?= baseUrl()?>Home" class="back-arrow">&#8592;</a>
       <h3 class="title">Login</h3>
       <form>
         <div class="input-group">
