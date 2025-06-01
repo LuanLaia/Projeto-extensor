@@ -27,7 +27,7 @@ class Curriculo extends ControllerMain
      */
     public function index()
     {
-        return $this->loadView("admin\listaCurriculo", $this->model->lista("id"));
+        return $this->loadView("sistema\listaCurriculo", $this->model->lista("id"));
     }
 
     public function form($action, $id)
@@ -38,7 +38,7 @@ class Curriculo extends ControllerMain
             "data" => $this->model->getById($id),
             "aCidade" => $CidadeModel->lista('cidade')
         ];
-        return $this->loadView("admin/formCurriculo", $dados);
+        return $this->loadView("sistema/formCurriculo", $dados);
     }
 
     /**

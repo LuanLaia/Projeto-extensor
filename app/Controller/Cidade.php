@@ -21,7 +21,7 @@ class Cidade extends ControllerMain
      */
     public function index()
     {
-        return $this->loadView("admin\listaCidade", $this->model->listaCidade());
+        return $this->loadView("sistema\listaCidade", $this->model->listaCidade());
     }
 
     /**
@@ -40,7 +40,7 @@ class Cidade extends ControllerMain
             "aUf" => $UfModel->lista()
         ];
 
-        return $this->loadView("admin/formCidade", $dados);
+        return $this->loadView("sistema/formCidade", $dados);
     }
 
     /**

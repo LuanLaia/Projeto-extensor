@@ -17,7 +17,7 @@ class Vagas extends ControllerMain
 
     public function index()
     {
-        return $this->loadView("admin\listaVagas", $this->model->lista("descricao"));
+        return $this->loadView("sistema\listaVagas", $this->model->lista("descricao"));
     }
 
     public function form($action, $id)
@@ -30,7 +30,7 @@ class Vagas extends ControllerMain
             "aCargo" => $CargoModel->lista()
         ];
 
-        return $this->loadView("admin/formVagas", $dados);
+        return $this->loadView("sistema/formVagas", $dados);
     }
 
     public function insert()
