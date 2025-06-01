@@ -8,7 +8,7 @@ class CargoModel extends ModelMain
 {
     protected $table = "cargo";
 
-    protected $validationRules = [
+    public $validationRules = [
         "descricao" => [
             "label" => 'Cargo',
             "rules" => ''

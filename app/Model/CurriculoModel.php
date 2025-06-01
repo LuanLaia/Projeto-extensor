@@ -9,7 +9,7 @@ class CurriculoModel extends ModelMain
 
     protected $table = "curriculum";
 
-    protected $validationRules = [
+    public $validationRules = [
         "logradouro" => [
             "label" => 'Logradouro',
             "rules" => 'required|min:3|max:60'
@@ -45,10 +45,6 @@ class CurriculoModel extends ModelMain
         "sexo" => [
             "label" => 'Sexo',
             "rules" => 'required|in:M,F'
-        ],
-        "foto" => [
-            "label" => 'Foto',
-            "rules" => 'max:100'
         ],
         "email" => [
             "label" => 'E-mail',

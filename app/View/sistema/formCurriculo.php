@@ -2,7 +2,7 @@
 
 <div class="m-2">
 
-    <form method="POST" action="<?= $this->request->formAction() ?>">
+    <form method="POST" action="<?= $this->request->formAction() ?>" enctype="multipart/form-data">
 
         <input type="hidden" name="id" id="id" value="<?= setValor("id") ?>">
         <input type="hidden" name="pessoa_fisica_id" id="pessoa_fisica_id" value="1252">
@@ -130,17 +130,24 @@
                 <?= setMsgFilderError("sexo") ?>
             </div>
 
-            <div class="col-3 mb-3">
-                <label for="foto" class="form-label">Foto</label>
-                <input type="text" class="form-control"
-                    id="foto"
-                    name="foto"
-                    maxlength="100"
-                    value="<?= setValor("foto") ?>"
-                    required>
+            <div class="row">
+            <?php if (in_array($this->request->getAction(), ['insert', 'update'])): ?>
+                <div class="mb-3 col-12">
+                    <label for="foto" class="form-label">Sua Foto 4X4</label>
+                    <input type="file" class="form-control" id="foto" name="foto" placeholder="Anexar a Imagem" maxlength="100" value="<?= setValor('foto') ?>">
+                    <?= setMsgFilderError('foto') ?>
+                </div>
+            <?php endif; ?>
 
-                    <?= setMsgFilderError("foto") ?>
+            <?php if (!empty(setValor("foto"))): ?>
+                <div class="mb-3 col-12">
+                    <h5>Imagem</h5>
+                    <img src="<?= baseUrl() . 'imagem.php?file=curriculo/' . setValor("foto") ?>" class="img-thumbnail" height="120" width="240" alt="Imagem foto">
+                    <input type="hidden" name="nomeImagem" id="nomeImagem" value="<?= setValor("foto") ?>">
+                </div>
+            <?php endif; ?>
             </div>
+
         </div>
 
         <div class="row">

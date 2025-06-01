@@ -8,7 +8,7 @@ class VagasModel extends ModelMain
 {
     protected $table = "vaga";
 
-    protected $validationRules = [
+    public $validationRules = [
         "descricao" => [
             "label" => 'Descrição',
             "rules" => 'required|min:3|max:60'

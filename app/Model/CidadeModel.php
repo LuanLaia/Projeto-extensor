@@ -8,7 +8,7 @@ class CidadeModel extends ModelMain
 {
     protected $table = "cidade";
     
-    protected $validationRules = [
+    public $validationRules = [
         "cidade"  => [
             "label" => 'Cidade',
             "rules" => 'required|min:3|max:200'

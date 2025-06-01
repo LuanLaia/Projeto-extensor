@@ -20,7 +20,7 @@
                             </div>
                             <div class="col-md-6">
                                 <p><strong>Email:</strong> <?= htmlspecialchars($value['email']) ?></p>
-                                <p><strong>Foto:</strong> <?= $value['foto'] ? '<img src="' . baseUrl() . 'uploads/' . $value['foto'] . '" alt="Foto" class="img-thumbnail" width="100">' : 'Não enviada' ?></p>
+                                <p><strong>Foto:</strong> <img src="<?= baseUrl() . 'imagem.php?file=curriculo/' . $value['foto'] ?>" class="img-thumbnail" height="120" width="240" alt="Imagem Curriculo"></p>
                                 <p><strong>Apresentação Pessoal:</strong><br><?= nl2br(htmlspecialchars($value['apresentacaoPessoal'])) ?></p>
                             </div>
                         </div>
