@@ -1,77 +1,103 @@
-/* style.css */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
 body {
-    background: #f0f4ff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  background-color: #f1f5ff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.container {
-    background: #fff;
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 8px 24px rgba(0, 42, 128, 0.15);
-    width: 100%;
-    max-width: 400px;
+.background-card {
+  position: absolute;
+  width: 400px;
+  height: 440px;
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  z-index: 0;
 }
 
-h2 {
-    text-align: center;
-    color: #002a80;
-    margin-bottom: 20px;
+.login-container {
+  position: relative;
+  z-index: 1;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
+.login-card {
+  width: 340px;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"],
+.title {
+  text-align: center;
+  color: #002f87;
+  margin-bottom: 25px;
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
 input[type="email"],
-input[type="password"],
-input[type="tel"] {
-    padding: 12px;
-    border: 1px solid #cfd8ff;
-    border-radius: 8px;
-    font-size: 16px;
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
-input:focus {
-    border-color: #002a80;
-    outline: none;
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background-color: #002f87;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
-button {
-    padding: 12px;
-    background-color: #002a80;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+.btn-login:hover {
+  background-color: #001d5c;
 }
 
-button:hover {
-    background-color: #0041c4;
+.register-link {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
 }
 
-p {
-    text-align: center;
-    font-size: 14px;
-    color: #666;
+.register-link a {
+  color: #002f87;
+  text-decoration: none;
 }
 
-a {
-    color: #002a80;
-    text-decoration: none;
+.back-arrow {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  font-size: 22px;
+  color: #002f87;
+  text-decoration: none;
+  font-weight: bold;
 }
+
+.back-arrow:hover {
+  color: #001d5c;
+}
+
+
+
