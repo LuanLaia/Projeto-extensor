@@ -11,52 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <style>
-        body {
-            background: linear-gradient(to right, #eef2f3, #8e9eab);
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .card {
-            border: none;
-            border-radius: 15px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.15);
-        }
-
-        .card-title i {
-            color: #0d6efd;
-        }
-
-        .btn {
-            transition: all 0.2s ease;
-        }
-
-        .btn:hover {
-            transform: scale(1.05);
-        }
-
-        .filter-bar {
-            background: #ffffffdd;
-            padding: 1rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-}
-    </style>
+    <link href="<?= baseUrl() ?>assets/css/listaVagas.css" rel="stylesheet">
 </head>
 <body>
 

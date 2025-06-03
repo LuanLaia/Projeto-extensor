@@ -1,0 +1,38 @@
+body {
+    background: linear-gradient(to right, #f8f9fa, #dceefb);
+    font-family: 'Segoe UI', sans-serif;
+    }
+
+    .form-label {
+        font-weight: 600;
+    }
+
+    .form-control, select {
+        border-radius: 10px;
+    }
+
+    .form-control:focus, select:focus {
+        border-color: #0d6efd;
+        box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    }
+
+    .btn {
+        border-radius: 8px;
+        font-weight: 500;
+    }
+
+    form {
+        background: #fff;
+        padding: 30px;
+        border-radius: 20px;
+        box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    }
+    body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex-grow: 1;
+}

@@ -10,43 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- AOS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <form method="POST" action="<?= $this->request->formAction() ?>" enctype="multipart/form-data">
-
-        .form-label {
-            font-weight: 600;
-        }
-
-        .form-control, select {
-            border-radius: 10px;
-        }
-
-        .form-control:focus, select:focus {
-            border-color: #0d6efd;
-            box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
-        }
-
-        .btn {
-            border-radius: 8px;
-            font-weight: 500;
-        }
-
-        form {
-            background: #fff;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
-        }
-        body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-}
-    </style>
+    <link href="<?= baseUrl() ?>assets/css/formCurriculo.css" rel="stylesheet">
 </head>
 <body>
 
@@ -54,7 +18,7 @@ main {
         <?= formTitulo("📄 Currículo") ?>
 
         <div class="m-2">
-            <form method="POST" action="<?= $this->request->formAction() ?>">
+            <form method="POST" action="<?= $this->request->formAction() ?>" enctype="multipart/form-data">
 
                 <input type="hidden" name="id" id="id" value="<?= setValor("id") ?>">
                 <input type="hidden" name="pessoa_fisica_id" id="pessoa_fisica_id" value="1252">

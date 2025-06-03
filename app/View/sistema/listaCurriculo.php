@@ -10,44 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- AOS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <style>
-        body {
-            background: linear-gradient(to right, #d7e1ec, #f3f7f9);
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .card {
-            border-radius: 15px;
-            transition: transform 0.2s;
-        }
-
-        .card:hover {
-            transform: scale(1.01);
-        }
-
-        .btn {
-            border-radius: 8px;
-            font-weight: 500;
-        }
-
-        .card-title {
-            font-weight: bold;
-        }
-
-        .img-thumbnail {
-            border-radius: 10px;
-        }
-        body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-}
-    </style>
+    <link href="<?= baseUrl() ?>assets/css/listaCurriculo.css" rel="stylesheet">
 </head>
 <body>
 

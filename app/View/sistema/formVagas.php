@@ -11,52 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-
-    <style>
-        body {
-            background: linear-gradient(to right, #eef2f3, #8e9eab);
-            font-family: 'Segoe UI', sans-serif;
-        }
-
-        .form-container {
-            background: #ffffffdd;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.08);
-            margin-top: 40px;
-        }
-
-        label {
-            font-weight: 500;
-        }
-
-        .form-control, select {
-            border-radius: 10px;
-        }
-
-        select.form-control {
-            padding: 0.375rem 0.75rem;
-        }
-
-        .btn-primary {
-            border-radius: 10px;
-            padding: 10px 25px;
-            font-weight: bold;
-        }
-
-        .btn-primary:hover {
-            transform: scale(1.03);
-        }
-        body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-main {
-    flex-grow: 1;
-}
-    </style>
+    <link href="<?= baseUrl() ?>assets/css/formVagas.css" rel="stylesheet">
 </head>
 <body>
 
