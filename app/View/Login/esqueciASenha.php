@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="mb-3 col-12">
                     <label for="email" class="form-label"><strong>Informe seu Email</strong></label>
-                    <input type="text" class="form-control border-dark mt-2" id="email" name="email" placeholder="Informe seu email" value="<?= setValor("email") ?>" required autofocus>
+                    <input type="text" class="form-control border-dark mt-2" id="login" name="login" placeholder="Informe seu email" value="<?= setValor("login") ?>" required autofocus>
                     <p class="mt-2">Você irá receber um e-mail com um link para recuperar sua senha</p>
                 </div>
                 <div class="col-12">

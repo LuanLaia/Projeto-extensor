@@ -8,49 +8,45 @@ class UsuarioRecuperaSenhaModel extends ModelMain
 {
     protected $table = "usuariorecuperasenha";
 
-    /**
-     * getRecuperaSenhaChave - Recuperar os dados do usuário especificado em $email
-     *
-     * @param string $chave 
-     * @return array
-     */
     public function getRecuperaSenhaChave($chave) 
     {
-        return $this->db->where(["statusRegistro" => 1, "chave" => $chave])->first();
+        return $this->db
+            ->where(["statusRegistro" => 1, "chave" => $chave])
+            ->first();
     }
 
-    /**
-     * desativaChave - Desativa chave de acesso
-     *
-     * @param mixed $id 
-     * @return void
-     */
-    function desativaChave($id) 
+    public function desativaChave($id) 
     {
-        $rs = $this->db->where(["id" => $id])->update(["statusRegistro" => 2, "updated_at" => date("Y-m-d H:i:s")]);
-        
-        if ($rs > 0) {
-            return true;
-        } else {
-            return false;
-        }      
+        return $this->db
+            ->where(["id" => $id])
+            ->update([
+                "statusRegistro" => 2,
+                "updated_at" => date("Y-m-d H:i:s")
+            ]) > 0;
     }
 
-    /**
-     * desativaChave - Desativa chave de acesso
-     *
-     * @param mixed $id 
-     * @return void
-     */
-    function desativaChaveAntigas($id) 
+    public function desativaChaveAntigas($usuario_id, $idAtual = null) 
     {
-        $rs = $this->db->where(["id <>" => $id])->update(["statusRegistro" => 2]);
-        
-        if ($rs > 0) {
-            return true;
-        } else {
-            return false;
-        }      
+        $cond = ["usuario_id" => $usuario_id];
+        if ($idAtual) {
+            $cond["id <>"] = $idAtual;
+        }
+
+        return $this->db
+            ->where($cond)
+            ->update([
+                "statusRegistro" => 2,
+                "updated_at" => date("Y-m-d H:i:s")
+            ]) > 0;
     }
-    
+
+    public function salvarNovaChave($usuario_id, $chave) 
+    {
+        return $this->db->insert([
+            "usuario_id" => $usuario_id,
+            "chave" => $chave,
+            "created_at" => date("Y-m-d H:i:s"),
+            "statusRegistro" => 1
+        ]);
+    }
 }

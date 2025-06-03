@@ -23,6 +23,7 @@
         <div class="input-group">
           <input type="password" name="senha" placeholder="Senha" required>
         </div>
+        <h6><a href="<?= baseUrl() ?>Login/esqueciASenha" class="text-decoration-none">Esqueci minha senha!</a></h6>
         <button type="submit" class="btn-login">Entrar</button>
       </form>
        <?= exibeAlerta() ?>
