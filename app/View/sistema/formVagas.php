@@ -15,7 +15,7 @@
 </head>
 <body>
 
-    <div class="container">
+    <div class="container" >
         <?= formTitulo("📝 Cadastro de Vaga", true) ?>
 
         <div class="form-container" data-aos="zoom-in">
