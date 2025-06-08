@@ -11,11 +11,24 @@
     <link href="<?= baseUrl() ?>assets/img/AtomPHP-icone.png" rel="icon" type="image/png">
     <link href="<?= baseUrl() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="<?= baseUrl() ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <style>
+    .navbar .nav-link {
+        color: #fff !important; /* branco */
+    }
+
+    .navbar .nav-link.active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+      .navbar-brand {
+    color: #fff !important; /* branco */
+  }
+</style>
 </head>
 <body>
 
     <header class="container-fluid mb-4 shadow-sm">
-        <nav class="navbar navbar-expand-lg bg-light border-bottom">
+        <nav class="navbar navbar-expand-lg bg-primary border-bottom">
             <div class="container">
               <a class="navbar-brand fw-bold" href="<?= baseUrl() ?>Home">Descubra Muriaé</a>
 
