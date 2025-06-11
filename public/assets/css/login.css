@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #f1f5ff;
+  background-color: #f0f4f8; /* cor do fundo do registro */
   height: 100vh;
   display: flex;
   align-items: center;
@@ -20,7 +20,7 @@ body {
   height: 440px;
   background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* sombra igual ao registro */
   z-index: 0;
 }
 
@@ -34,12 +34,12 @@ body {
   padding: 30px;
   border-radius: 20px;
   background-color: #ffffff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* igual ao registro */
 }
 
 .title {
   text-align: center;
-  color: #002f87;
+  color: #007BFF; /* azul igual ao registro */
   margin-bottom: 25px;
 }
 
@@ -59,7 +59,7 @@ input[type="password"] {
 .btn-login {
   width: 100%;
   padding: 12px;
-  background-color: #002f87;
+  background-color: #007BFF; /* azul do registro */
   color: white;
   font-weight: bold;
   border: none;
@@ -67,10 +67,11 @@ input[type="password"] {
   font-size: 15px;
   cursor: pointer;
   margin-top: 10px;
+  transition: background-color 0.3s;
 }
 
 .btn-login:hover {
-  background-color: #001d5c;
+  background-color: #0056b3; /* hover do registro */
 }
 
 .register-link {
@@ -81,8 +82,12 @@ input[type="password"] {
 }
 
 .register-link a {
-  color: #002f87;
+  color: #007BFF; /* cor dos links no registro */
   text-decoration: none;
+}
+
+.register-link a:hover {
+  text-decoration: underline;
 }
 
 .back-arrow {
@@ -90,14 +95,21 @@ input[type="password"] {
   top: 20px;
   left: 25px;
   font-size: 22px;
-  color: #002f87;
+  color: #007BFF;
   text-decoration: none;
   font-weight: bold;
+  background: none;
 }
 
 .back-arrow:hover {
-  color: #001d5c;
+  color: #0056b3;
 }
 
+h6 a {
+  text-decoration: none;
+  color: #007BFF;
+}
 
-
+h6 a:hover {
+  text-decoration: underline;
+}
