@@ -8,8 +8,10 @@
     <script src="<?= baseUrl() ?>assets/js/cadastro.js"></script>
 </head>
 <body>
+    
+<div class="background-card">
+
     <div class="container">
-        
         <div class="tabs">
             <button onclick="showForm('usuario')" id="usuarioBtn" class="active">Usuário</button>
             <button onclick="showForm('empresa')" id="empresaBtn">Empresa</button>
@@ -39,7 +41,6 @@
         <p style="margin-top: 1rem; text-align: center;">
             Já possui um login? <a href="<?= baseUrl()?>Login">Entrar</a>
         </p>
-    </div>
-    
+    </div>   
 </body>
 </html>
