@@ -94,9 +94,10 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS descubra_muriae.usuario (
   id INT NOT NULL AUTO_INCREMENT,
   pessoa_fisica_id INT NOT NULL,
-  login VARCHAR(50) NULL DEFAULT NULL,
-  senha VARCHAR(50) NULL DEFAULT NULL,
+  email VARCHAR(50) NULL DEFAULT NULL,
+  senha VARCHAR(255) NULL DEFAULT NULL,
   tipo CHAR(2) NOT NULL COMMENT 'A = Anunciante, G = Gestor, CN = Contribuinte normativo',
+  nivel INT NOT NULL DEFAULT 21 COMMENT '1=Super Administrador; 11=Administrador; 21=Canditado; 22=Empresa',
   PRIMARY KEY (id),
   INDEX fk_pessoa_fisica_usuario1_idx (pessoa_fisica_id ASC) VISIBLE,
   CONSTRAINT fk_pessoa_fisica_usuario1

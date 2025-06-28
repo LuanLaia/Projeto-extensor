@@ -6,6 +6,8 @@ use App\Model\VagasModel;
 use App\Model\CargoModel;
 use Core\Library\ControllerMain;
 use Core\Library\Redirect;
+use Core\Library\Session;
+use Core\Library\Validator;
 
 class Vagas extends ControllerMain
 {

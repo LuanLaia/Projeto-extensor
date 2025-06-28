@@ -9,7 +9,7 @@ class UsuarioModel extends ModelMain
     protected $table = "usuario";
 
     public $validationRules = [
-         "login"  => [
+         "email"  => [
             "label" => 'Email',
             "rules" => 'required|min:5|max:150'
         ],
@@ -25,8 +25,21 @@ class UsuarioModel extends ModelMain
      * @param string $email 
      * @return array
      */
-    public function getUserByLogin($login)
-    {
-        return $this->db->where("login", $login)->first();
-    }
+    public function getUserEmail($email)
+{
+    return $this->db
+        ->table("usuario u")
+        ->select("u.*, pf.nome")
+        ->join("pessoa_fisica pf", "pf.id = u.pessoa_fisica_id")
+        ->where("u.email", $email)
+        ->first();
+}
+
+
+
+    public function insert($dados)
+{
+    return $this->db->table("usuario")->insert($dados);
+}
+
 }

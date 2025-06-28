@@ -8,6 +8,7 @@ use Core\Library\ControllerMain;
 use Core\Library\Redirect;
 use Core\Library\Files;
 use Core\Library\Validator;
+use Core\Library\Session;
 
 class Curriculo extends ControllerMain
 {

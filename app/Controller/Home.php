@@ -4,6 +4,7 @@
 namespace App\Controller;
 
 use Core\Library\ControllerMain;
+use Core\Library\Session;
 
 class Home extends ControllerMain
 {
