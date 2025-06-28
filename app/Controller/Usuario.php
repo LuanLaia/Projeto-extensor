@@ -15,6 +15,7 @@ class Usuario extends ControllerMain
     {
         $this->auxiliarConstruct();
         $this->loadHelper(['formHelper', 'tabela']);
+        $this->validaAcesso();
         $this->validaNivelAcesso(); 
 
         // Usar para validar acesso

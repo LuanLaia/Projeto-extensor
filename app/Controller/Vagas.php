@@ -12,9 +12,10 @@ use Core\Library\Validator;
 class Vagas extends ControllerMain
 {
     public function __construct() 
-    {
+    {    
         $this->auxiliarconstruct();
         $this->loadHelper('formHelper');
+        $this->validaAcesso();
     }
 
     public function index()

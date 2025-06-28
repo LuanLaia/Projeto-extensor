@@ -12,6 +12,7 @@ class Cidade extends ControllerMain
     {
         $this->auxiliarconstruct();
         $this->loadHelper('formHelper');
+        $this->validaAcesso();
     }
 
     /**

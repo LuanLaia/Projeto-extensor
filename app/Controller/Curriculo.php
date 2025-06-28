@@ -19,6 +19,7 @@ class Curriculo extends ControllerMain
         $this->auxiliarconstruct();
         $this->loadHelper('formHelper');
         $this->files = new Files();
+        $this->validaAcesso();
     }
 
     /**

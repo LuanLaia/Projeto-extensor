@@ -53,6 +53,13 @@ class ControllerMain
         }
     }
 
+     public function validaAcesso()
+    {
+        if (!Session::get("userId")) {
+            return Redirect::page("home", ["msgError" => "Você não possui acesso a essa página"]);
+        }
+    }
+
     /**
      * loadModel
      *

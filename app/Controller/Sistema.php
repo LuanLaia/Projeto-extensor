@@ -9,6 +9,7 @@ class Sistema extends ControllerMain
 {
     public function index()
     {
+        $this->validaAcesso(); 
         return $this->loadView("sistema/home");
     }
 }
