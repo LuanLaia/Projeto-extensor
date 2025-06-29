@@ -6,7 +6,7 @@ use Core\Library\ModelMain;
 
 class PessoaFisicaModel extends ModelMain
 {
-
+    protected $table = "pessoa_fisica";
     /**
      * Cria nova pessoa física
      *

@@ -6,6 +6,7 @@
   <title>Login</title>
   <link href="<?= baseUrl() ?>assets/css/login.css" rel="stylesheet">
   <link href="<?= baseUrl() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
 

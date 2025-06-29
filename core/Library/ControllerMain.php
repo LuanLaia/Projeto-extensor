@@ -3,6 +3,8 @@
 namespace Core\Library;
 
 use Core\Library\Request;
+use Core\Library\Session;
+use Core\Library\Redirect;
 
 class ControllerMain
 {
@@ -56,9 +58,12 @@ class ControllerMain
      public function validaAcesso()
     {
         if (!Session::get("userId")) {
-            return Redirect::page("home", ["msgError" => "Você não possui acesso a essa página"]);
-        }
+        return Redirect::page("home", [
+            "msgError" => "Você não possui acesso a essa página"
+        ]);
     }
+    }
+    
 
     /**
      * loadModel

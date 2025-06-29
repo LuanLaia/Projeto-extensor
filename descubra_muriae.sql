@@ -79,7 +79,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS descubra_muriae.pessoa_fisica (
   id INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(150) NOT NULL,
-  cpf CHAR(11) NULL DEFAULT NULL,
+  cpf CHAR(14) NULL DEFAULT NULL,
   visitante_id INT NULL DEFAULT NULL,
   PRIMARY KEY (id)
 )
