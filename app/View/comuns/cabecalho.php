@@ -37,12 +37,14 @@
                             <li class="nav-item">
                                 <a class="nav-link <?= $this->request->getController() === 'Vagas' ? 'active' : '' ?>" href="<?= baseUrl() ?>Vagas">Vagas</a>
                             </li>
+                            <?php if (Session::get("userNivel") == 21): ?>
                             <li class="nav-item">
                                 <a class="nav-link <?= $this->request->getController() === 'Curriculo' ? 'active' : '' ?>" href="<?= baseUrl() ?>Curriculo">Currículo</a>
                             </li>
+                            <?php endif; ?>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Usuário
+                                    <?php echo Session::get('userNome') ?>
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>login/signOut">Sair</a></li>               

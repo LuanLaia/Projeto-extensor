@@ -28,18 +28,25 @@ USE `descubra_muriae` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS descubra_muriae.estabelecimento (
   id INT NOT NULL AUTO_INCREMENT,
+  pessoa_fisica_id INT NULL, 
   nome VARCHAR(50) NOT NULL,
   endereco VARCHAR(200) NULL DEFAULT NULL,
   latitude CHAR(12) NOT NULL,
   longitude CHAR(12) NOT NULL,
   email VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (id),
-  FULLTEXT INDEX ft_busca (nome) VISIBLE
+  FULLTEXT INDEX ft_busca (nome) VISIBLE,
+  CONSTRAINT fk_estabelecimento_pessoa_fisica
+    FOREIGN KEY (pessoa_fisica_id)
+    REFERENCES descubra_muriae.pessoa_fisica(id)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE
 )
 ENGINE = InnoDB
 AUTO_INCREMENT = 1202
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
+
 
 -- -----------------------------------------------------
 -- Table descubra_muriae.categoria_estabelecimento
