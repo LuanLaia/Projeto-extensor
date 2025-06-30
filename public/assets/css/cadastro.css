@@ -1,3 +1,4 @@
+/* Atinge todos os elementos HTML */
 * {
     margin: 0;
     padding: 0;
@@ -5,6 +6,7 @@
     font-family: Arial, sans-serif;
 }
 
+/* Fundo da tela e centralização */
 body {
     background: #f0f4f8;
     display: flex;
@@ -14,7 +16,7 @@ body {
     position: relative;
 }
 
-/* Fundo branco atrás do formulário, centralizado */
+/* Cartão de fundo centralizado */
 .background-card {
     position: absolute;
     top: 50%;
@@ -22,13 +24,13 @@ body {
     transform: translate(-50%, -50%);
     width: 420px;
     height: 560px;
-    background-color: #ffffff;
+    background-color: #fff;
     border-radius: 20px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     z-index: 0;
 }
 
-/* Conteúdo principal */
+/* Área principal do formulário */
 .container {
     position: absolute;
     top: 50%;
@@ -42,14 +44,14 @@ body {
     padding: 3rem 2rem 2rem 2rem;
 }
 
-
-/* Abas Usuário / Empresa */
+/* Botões de troca entre formulários */
 .tabs {
     display: flex;
     justify-content: space-around;
     margin-bottom: 20px;
 }
 
+/* Estilo padrão dos botões */
 .tabs button {
     flex: 1;
     padding: 12px;
@@ -58,27 +60,30 @@ body {
     cursor: pointer;
     transition: background 0.3s;
     font-weight: bold;
-    border-radius: 8px; /* deixa os cantos arredondados */
+    border-radius: 8px;
     font-size: 15px;
-    margin: 0 5px; /* adiciona espaçamento entre os botões */
+    margin: 0 5px;
 }
 
+/* Botão selecionado */
 .tabs button.active {
     background: #007BFF;
     color: white;
 }
 
-/* Formulários */
+/* Esconde formulários */
 .form {
     display: none;
     flex-direction: column;
 }
 
+/* Mostra o formulário ativo */
 .form.active {
     display: flex;
     flex-direction: column;
 }
 
+/* Campos de entrada */
 input[type="text"],
 input[type="email"],
 input[type="password"] {
@@ -88,13 +93,13 @@ input[type="password"] {
     border-radius: 4px;
 }
 
-/* Checkbox e rótulo */
+/* Rótulos dos campos */
 label {
     font-size: 14px;
     margin-bottom: 10px;
 }
 
-/* Botão registrar */
+/* Botão de enviar */
 button[type="submit"] {
     padding: 12px;
     background: #007BFF;
@@ -107,11 +112,12 @@ button[type="submit"] {
     transition: background 0.3s;
 }
 
+/* Efeito hover no botão */
 button[type="submit"]:hover {
     background: #0056b3;
 }
 
-/* Botão de voltar */
+/* Botão de voltar no topo */
 .back-arrow {
     position: absolute;
     top: 20px;
@@ -123,6 +129,7 @@ button[type="submit"]:hover {
     z-index: 2;
 }
 
+/* Remove sublinhado em todos os estados */
 .back-arrow:visited,
 .back-arrow:focus,
 .back-arrow:hover,

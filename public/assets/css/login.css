@@ -1,3 +1,4 @@
+/* Atinge todos os elementos HTML */
 * {
   margin: 0;
   padding: 0;
@@ -5,8 +6,9 @@
   font-family: Arial, sans-serif;
 }
 
+/* Define fundo da página e centraliza o conteúdo */
 body {
-  background-color: #f0f4f8; /* cor do fundo do registro */
+  background-color: #f0f4f8;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -14,39 +16,45 @@ body {
   position: relative;
 }
 
+/* Cartão branco de fundo centralizado */
 .background-card {
   position: absolute;
   width: 400px;
   height: 440px;
   background-color: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* sombra igual ao registro */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   z-index: 0;
 }
 
+/* Container principal do login (fica acima do fundo) */
 .login-container {
   position: relative;
   z-index: 1;
 }
 
+/* Área visual do login com sombra e padding */
 .login-card {
   width: 340px;
   padding: 30px;
   border-radius: 20px;
   background-color: #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* igual ao registro */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
+/* Título centralizado e azul */
 .title {
   text-align: center;
-  color: #007BFF; /* azul igual ao registro */
+  color: #007BFF;
   margin-bottom: 25px;
 }
 
+/* Espaçamento entre os campos */
 .input-group {
   margin-bottom: 15px;
 }
 
+/* Estiliza campos de e-mail e senha */
 input[type="email"],
 input[type="password"] {
   width: 100%;
@@ -56,10 +64,11 @@ input[type="password"] {
   font-size: 14px;
 }
 
+/* Botão azul de login */
 .btn-login {
   width: 100%;
   padding: 12px;
-  background-color: #007BFF; /* azul do registro */
+  background-color: #007BFF;
   color: white;
   font-weight: bold;
   border: none;
@@ -70,10 +79,12 @@ input[type="password"] {
   transition: background-color 0.3s;
 }
 
+/* Efeito hover do botão de login */
 .btn-login:hover {
-  background-color: #0056b3; /* hover do registro */
+  background-color: #0056b3;
 }
 
+/* Texto abaixo do botão com link de registro */
 .register-link {
   margin-top: 15px;
   text-align: center;
@@ -81,15 +92,18 @@ input[type="password"] {
   color: #555;
 }
 
+/* Link do registro com cor azul e sem sublinhado */
 .register-link a {
-  color: #007BFF; /* cor dos links no registro */
+  color: #007BFF;
   text-decoration: none;
 }
 
+/* Efeito hover no link do registro */
 .register-link a:hover {
   text-decoration: underline;
 }
 
+/* Ícone de voltar no canto superior esquerdo */
 .back-arrow {
   position: absolute;
   top: 20px;
@@ -101,15 +115,18 @@ input[type="password"] {
   background: none;
 }
 
+/* Hover no ícone de voltar */
 .back-arrow:hover {
   color: #0056b3;
 }
 
+/* Link dentro de <h6> com estilo azul */
 h6 a {
   text-decoration: none;
   color: #007BFF;
 }
 
+/* Hover para o link do <h6> */
 h6 a:hover {
   text-decoration: underline;
 }
