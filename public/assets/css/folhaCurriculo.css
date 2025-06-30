@@ -1,0 +1,19 @@
+.modal-content.paper-style {
+    background-image: url('../img/folhadepapelfundovisualizar.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 40px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin: auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+}
+
+#conteudoCurriculo {
+    background-color: #ffffff; /* fundo branco sólido */
+    padding: 20px;
+    border-radius: 6px;
+}

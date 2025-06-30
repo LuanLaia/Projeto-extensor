@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
     <!-- AOS CSS -->
     <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Seu CSS -->
     <link href="<?= baseUrl() ?>assets/css/listaVagas.css" rel="stylesheet">
 </head>
 <body>
@@ -27,8 +28,8 @@
                 <div class="col-md-6">
                     <select id="filtroStatus" class="form-select">
                         <option value="">🎚️ Filtrar por status</option>
-                        <option value="Ativa">✅ Ativa</option>
-                        <option value="Inativa">❌ Inativa</option>
+                        <option value="ativa">✅ Ativa</option>
+                        <option value="fechada">🚫 Fechada</option>
                     </select>
                 </div>
             </div>
@@ -38,10 +39,16 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="listaVagas">
 
             <?php foreach ($aDados as $value): ?>
-                <div class="col vaga" 
-                    data-descricao="<?= strtolower($value['descricao']) ?>" 
-                    data-status="<?= strtolower($value['statusVaga']) ?>" 
+                <?php
+                    // Define o status filtrável: "fechada" se for "Finalizada", senão "ativa"
+                    $statusOriginal = strtolower($value['statusVaga']);
+                    $statusFiltrado = $statusOriginal === 'finalizada' ? 'fechada' : 'ativa';
+                ?>
+                <div class="col vaga"
+                    data-descricao="<?= strtolower($value['descricao']) ?>"
+                    data-status="<?= $statusFiltrado ?>"
                     data-aos="fade-up">
+
                     <div class="card h-100 shadow-sm">
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title text-primary fw-bold">
@@ -56,11 +63,12 @@
                             <p class="card-text"><strong>Fim:</strong> <?= htmlspecialchars($value['dtFim']) ?></p>
                             <p class="card-text">
                                 <strong>Status:</strong>
-                                <span class="badge bg-<?= $value['statusVaga'] === 'Ativa' ? 'success' : 'secondary' ?>">
-                                    <?= htmlspecialchars($value['statusVaga']) ?>
+                                <span class="badge bg-<?= $statusFiltrado === 'ativa' ? 'success' : 'secondary' ?>">
+                                    <?= $statusFiltrado === 'fechada' ? 'Fechada' : 'Ativa' ?>
                                 </span>
                             </p>
 
+                            <!-- Botões -->
                             <div class="mt-auto d-flex justify-content-end gap-2">
                                 <a href="<?= baseUrl() ?>Vagas/form/view/<?= $value['id'] ?>" class="btn btn-outline-primary btn-sm" title="Visualizar">
                                     <i class="bi bi-eye"></i>
@@ -80,14 +88,12 @@
         </div>
     </div>
 
-    <!-- Bootstrap Bundle -->
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
         AOS.init();
 
-        // Script de Filtro/Busca
         const buscaInput = document.getElementById('buscaInput');
         const filtroStatus = document.getElementById('filtroStatus');
         const vagas = document.querySelectorAll('.vaga');
@@ -99,14 +105,16 @@
             vagas.forEach(vaga => {
                 const descricao = vaga.dataset.descricao;
                 const vagaStatus = vaga.dataset.status;
-                const mostrar = (!termo || descricao.includes(termo)) && (!status || vagaStatus === status);
-                vaga.style.display = mostrar ? 'block' : 'none';
+
+                const correspondeBusca = !termo || descricao.includes(termo);
+                const correspondeStatus = !status || vagaStatus === status;
+
+                vaga.style.display = (correspondeBusca && correspondeStatus) ? 'block' : 'none';
             });
         }
 
         buscaInput.addEventListener('input', filtrarVagas);
         filtroStatus.addEventListener('change', filtrarVagas);
     </script>
-
 </body>
 </html>
