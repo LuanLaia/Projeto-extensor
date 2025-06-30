@@ -10,10 +10,36 @@
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     font-family: 'Georgia', serif;
     line-height: 1.6;
+    overflow: hidden;
 }
 
 #conteudoCurriculo {
-    background-color: #ffffff; /* fundo branco sólido */
+    background-color: #ffffff;
     padding: 20px;
     border-radius: 6px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.foto-3x4 {
+    width: 120px;
+    height: 160px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.foto-3x4:hover {
+    transform: scale(1.05);
+}
+
+#fotoExpandida {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
 }
