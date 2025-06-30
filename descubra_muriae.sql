@@ -28,18 +28,25 @@ USE `descubra_muriae` ;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS descubra_muriae.estabelecimento (
   id INT NOT NULL AUTO_INCREMENT,
+  pessoa_fisica_id INT NULL, 
   nome VARCHAR(50) NOT NULL,
   endereco VARCHAR(200) NULL DEFAULT NULL,
   latitude CHAR(12) NOT NULL,
   longitude CHAR(12) NOT NULL,
   email VARCHAR(150) NULL DEFAULT NULL,
   PRIMARY KEY (id),
-  FULLTEXT INDEX ft_busca (nome) VISIBLE
+  FULLTEXT INDEX ft_busca (nome) VISIBLE,
+  CONSTRAINT fk_estabelecimento_pessoa_fisica
+    FOREIGN KEY (pessoa_fisica_id)
+    REFERENCES descubra_muriae.pessoa_fisica(id)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE
 )
 ENGINE = InnoDB
 AUTO_INCREMENT = 1202
 DEFAULT CHARACTER SET = utf8mb4
 COLLATE = utf8mb4_0900_ai_ci;
+
 
 -- -----------------------------------------------------
 -- Table descubra_muriae.categoria_estabelecimento
@@ -79,7 +86,7 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS descubra_muriae.pessoa_fisica (
   id INT NOT NULL AUTO_INCREMENT,
   nome VARCHAR(150) NOT NULL,
-  cpf CHAR(11) NULL DEFAULT NULL,
+  cpf CHAR(14) NULL DEFAULT NULL,
   visitante_id INT NULL DEFAULT NULL,
   PRIMARY KEY (id)
 )
@@ -94,9 +101,10 @@ COLLATE = utf8mb4_0900_ai_ci;
 CREATE TABLE IF NOT EXISTS descubra_muriae.usuario (
   id INT NOT NULL AUTO_INCREMENT,
   pessoa_fisica_id INT NOT NULL,
-  login VARCHAR(50) NULL DEFAULT NULL,
-  senha VARCHAR(50) NULL DEFAULT NULL,
+  email VARCHAR(50) NULL DEFAULT NULL,
+  senha VARCHAR(255) NULL DEFAULT NULL,
   tipo CHAR(2) NOT NULL COMMENT 'A = Anunciante, G = Gestor, CN = Contribuinte normativo',
+  nivel INT NOT NULL DEFAULT 21 COMMENT '1=Super Administrador; 11=Administrador; 21=Canditado; 22=Empresa',
   PRIMARY KEY (id),
   INDEX fk_pessoa_fisica_usuario1_idx (pessoa_fisica_id ASC) VISIBLE,
   CONSTRAINT fk_pessoa_fisica_usuario1

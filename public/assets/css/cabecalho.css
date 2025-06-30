@@ -1,0 +1,11 @@
+.navbar .nav-link {
+        color: #fff !important; /* branco */
+    }
+
+    .navbar .nav-link.active {
+        font-weight: bold;
+        text-decoration: underline;
+    }
+      .navbar-brand {
+    color: #fff !important; /* branco */
+  }

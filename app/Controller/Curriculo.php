@@ -8,6 +8,7 @@ use Core\Library\ControllerMain;
 use Core\Library\Redirect;
 use Core\Library\Files;
 use Core\Library\Validator;
+use Core\Library\Session;
 
 class Curriculo extends ControllerMain
 {
@@ -18,6 +19,7 @@ class Curriculo extends ControllerMain
         $this->auxiliarconstruct();
         $this->loadHelper('formHelper');
         $this->files = new Files();
+        $this->validaAcesso();
     }
 
     /**

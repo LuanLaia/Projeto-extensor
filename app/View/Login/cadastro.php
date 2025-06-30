@@ -17,24 +17,28 @@
             <button onclick="showForm('empresa')" id="empresaBtn">Empresa</button>
         </div>
         <a href="<?= baseUrl()?>Home" class="back-arrow">←</a>
-        <form id="form-usuario" class="form active">
+
+        <form id="form-usuario" class="form active" action="<?= baseUrl() ?>Cadastro/store" method="post">
             <h2>Registro de Usuário</h2>
-            <input type="text" placeholder="Nome" required>
-            <input type="text" placeholder="CPF" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Senha" required>
-            <input type="password" placeholder="Repetir Senha" required>
-            <label><input type="checkbox"> Aceito os termos de uso</label>
+            <input type="hidden" name="tipo_cadastro" value="usuario">
+            <input type="text" name="nome" placeholder="Nome" maxlength="150" required>
+            <input type="text" name="cpf" placeholder="CPF"  maxlength="11" required>
+            <input type="email" name="email" placeholder="Email" maxlength="50" required>
+            <input type="password" name="senha" placeholder="Senha" minlength="8" required>
+            <input type="password" name="senha_confirmar" placeholder="Repetir Senha" minlength="8" required>
+            <label><input type="checkbox" name="termos"> Aceito os termos de uso</label>
             <button type="submit">Registrar</button>
         </form>
-        <form id="form-empresa" class="form">
+
+        <form id="form-empresa" class="form" action="<?= baseUrl() ?>Cadastro/store" method="post">
             <h2>Registro de Empresa</h2>
-            <input type="text" placeholder="Nome da Empresa" required>
-            <input type="text" placeholder="CNPJ" required>
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Senha" required>
-            <input type="password" placeholder="Repetir Senha" required>
-            <label><input type="checkbox"> Aceito os termos de uso</label>
+            <input type="hidden" name="tipo_cadastro" value="empresa">
+            <input type="text" name="nome" placeholder="Nome da Empresa" maxlength="150" required>
+            <input type="text" name="cnpj" placeholder="CNPJ" maxlength="14" required>
+            <input type="email" name="email" placeholder="Email" maxlength="50" required>
+            <input type="password" name="senha" placeholder="Senha" inlength="8" required>
+            <input type="password" name="senha_confirmar" placeholder="Repetir Senha" minlength="8" required>
+            <label><input type="checkbox" name="termos"> Aceito os termos de uso</label>
             <button type="submit">Registrar</button>
         </form>
 

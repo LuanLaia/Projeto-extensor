@@ -3,6 +3,8 @@
 namespace Core\Library;
 
 use Core\Library\Request;
+use Core\Library\Session;
+use Core\Library\Redirect;
 
 class ControllerMain
 {
@@ -39,6 +41,29 @@ class ControllerMain
         // carregar helper padrão
         $this->loadHelper(["formulario", "utilits"]);
     }
+
+    /**
+     * validaNivelAcesso
+     *
+     * @param int $nivelMinino 
+     * @return void
+     */
+    public function validaNivelAcesso(int $nivelMinino = 20)
+    {
+        if (!((int)Session::get("userNivel") <= $nivelMinino)) {
+            return Redirect::page("sistema", ["msgError" => "Você não possui permissão neste programa"]);
+        }
+    }
+
+     public function validaAcesso()
+    {
+        if (!Session::get("userId")) {
+        return Redirect::page("home", [
+            "msgError" => "Você não possui acesso a essa página"
+        ]);
+    }
+    }
+    
 
     /**
      * loadModel

@@ -24,5 +24,26 @@ DELETE FROM usuario WHERE id = '1237';
 ALTER TABLE descubra_muriae.usuario
 MODIFY COLUMN senha VARCHAR(255) NULL DEFAULT NULL;
 
+ALTER TABLE descubra_muriae.usuario
+ADD COLUMN nivel INT NOT NULL DEFAULT 21 COMMENT '1=Super Administrador; 11=Administrador; 21=Canditado; 22=Empresa';
+
+ALTER TABLE descubra_muriae.usuario
+CHANGE COLUMN login email VARCHAR(50) NULL DEFAULT NULL;
+
+ALTER TABLE descubra_muriae.pessoa_fisica
+MODIFY COLUMN cpf CHAR(14) NULL DEFAULT NULL;
+
+ALTER TABLE descubra_muriae.estabelecimento
+ADD COLUMN pessoa_fisica_id INT NULL AFTER id,
+ADD CONSTRAINT fk_estabelecimento_pessoa_fisica
+    FOREIGN KEY (pessoa_fisica_id)
+    REFERENCES descubra_muriae.pessoa_fisica(id)
+    ON DELETE SET NULL
+    ON UPDATE CASCADE;
+
+
+
+
+
 
 

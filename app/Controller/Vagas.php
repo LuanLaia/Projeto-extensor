@@ -6,13 +6,16 @@ use App\Model\VagasModel;
 use App\Model\CargoModel;
 use Core\Library\ControllerMain;
 use Core\Library\Redirect;
+use Core\Library\Session;
+use Core\Library\Validator;
 
 class Vagas extends ControllerMain
 {
     public function __construct() 
-    {
+    {    
         $this->auxiliarconstruct();
         $this->loadHelper('formHelper');
+        $this->validaAcesso();
     }
 
     public function index()
