@@ -56,6 +56,8 @@ class Login extends ControllerMain
         Session::set("userEmail", $aUser['email']);
         Session::set("userNivel", $aUser['nivel']);
         Session::set("userSenha", $aUser['senha']);
+        Session::set("pessoaFisicaId", $aUser['pessoa_fisica_id']);
+
 
         return Redirect::page("sistema");
     }
@@ -67,6 +69,7 @@ class Login extends ControllerMain
         Session::destroy('userEmail');
         Session::destroy('userNivel');
         Session::destroy('userSenha');
+        Session::destroy("pessoaFisicaId");
 
         return Redirect::Page("home");
     }
@@ -85,8 +88,8 @@ class Login extends ControllerMain
 {
     $pessoaFisicaModel = $this->loadModel("PessoaFisica");
 
-    $email = "aldecir.fonseca@santamarcelina.edu.br";
-    $nome  = "Aldecir Fonseca";
+    $email = "luanpr.laia@gmail.com";
+    $nome  = "Luan  Pereira Rosa Laia";
 
     $usuarioExistente = $this->model->getUserEmail($email);
     if ($usuarioExistente) {

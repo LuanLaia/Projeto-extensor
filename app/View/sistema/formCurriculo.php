@@ -1,3 +1,8 @@
+<?php
+
+use Core\Library\Session;
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -12,15 +17,15 @@
     <link href="<?= baseUrl() ?>assets/css/formCurriculo.css" rel="stylesheet">
 </head>
 <body>
-
+    <?php var_dump(Session::get("pessoaFisicaId")) ?>
     <div class="container my-5" >
         <?= formTitulo("📄 Currículo") ?>
 
         <div class="m-2">
             <form method="POST" action="<?= $this->request->formAction() ?>" enctype="multipart/form-data">
 
-                <input type="hidden" name="id" id="id" value="<?= setValor("id") ?>">
-                <input type="hidden" name="pessoa_fisica_id" id="pessoa_fisica_id" value="1252">
+                <input type="hidden" name="id" id="id" value="<?= Session::get("userId") ?>">
+                <input type="hidden" name="pessoa_fisica_id" id="pessoa_fisica_id" value="<?= Session::get("pessoaFisicaId") ?>">
 
                 <div class="row">
                     <div class="col-md-6 mb-3">

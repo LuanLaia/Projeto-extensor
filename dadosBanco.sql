@@ -40,6 +40,129 @@ ADD CONSTRAINT fk_estabelecimento_pessoa_fisica
     REFERENCES descubra_muriae.pessoa_fisica(id)
     ON DELETE SET NULL
     ON UPDATE CASCADE;
+    
+    
+    
+INSERT INTO cidade (cidade, uf) VALUES 
+('Itaperuna', 'RJ'),
+('Miraí', 'MG'),
+('Muriaé', 'MG'),
+('Rosário da Limeira', 'MG'),
+('Barão do Monte Alto', 'MG'),
+('Patrocínio do Muriaé', 'MG'),
+('Miraí', 'MG'),
+('Vieiras', 'MG'),
+('Eugenópolis', 'MG'),
+('Fervedouro', 'MG'),
+('São Francisco do Glória', 'MG'),
+('Carangola', 'MG'),
+('Tombos', 'MG'),
+('Ervália', 'MG'),
+('Cataguases', 'MG'),
+('Leopoldina', 'MG'),
+('Além Paraíba', 'MG'),
+('Miracema', 'RJ'),
+('Bom Jesus do Itabapoana', 'RJ'),
+('Natividade', 'RJ'),
+('Porciúncula', 'RJ'),
+('Varre-Sai', 'RJ'),
+('Apiacá', 'ES'),
+('Guaçuí', 'ES'),
+('Alegre', 'ES');
+
+-- ADMINISTRATIVO
+INSERT INTO cargo (descricao) VALUES 
+('Assistente Administrativo'),
+('Secretária Executiva'),
+('Recepcionista'),
+('Auxiliar de Escritório'),
+('Analista Administrativo'),
+('Coordenador Administrativo');
+
+-- FINANCEIRO
+INSERT INTO cargo (descricao) VALUES 
+('Auxiliar Financeiro'),
+('Analista de Contas a Pagar'),
+('Analista de Contas a Receber'),
+('Tesoureiro'),
+('Controller'),
+('Diretor Financeiro (CFO)');
+
+-- COMERCIAL / VENDAS
+INSERT INTO cargo (descricao) VALUES 
+('Vendedor Interno'),
+('Vendedor Externo'),
+('Representante Comercial'),
+('Promotor de Vendas'),
+('Gerente Comercial'),
+('Consultor de Vendas');
+
+-- RECURSOS HUMANOS
+INSERT INTO cargo (descricao) VALUES 
+('Auxiliar de RH'),
+('Analista de RH'),
+('Recrutador'),
+('Coordenador de RH'),
+('Business Partner'),
+('Diretor de RH');
+
+-- LOGÍSTICA / ESTOQUE
+INSERT INTO cargo (descricao) VALUES 
+('Almoxarife'),
+('Auxiliar de Logística'),
+('Conferente'),
+('Estoquista'),
+('Analista de Logística'),
+('Supervisor de Logística');
+
+-- INDUSTRIAL / PRODUÇÃO
+INSERT INTO cargo (descricao) VALUES 
+('Operador de Máquinas'),
+('Auxiliar de Produção'),
+('Inspetor de Qualidade'),
+('Técnico de Manutenção'),
+('Engenheiro de Produção'),
+('Supervisor de Fábrica');
+
+-- TI / TECNOLOGIA
+INSERT INTO cargo (descricao) VALUES 
+('Suporte Técnico'),
+('Programador'),
+('Desenvolvedor Full Stack'),
+('Analista de Sistemas'),
+('Engenheiro de Software'),
+('Gerente de TI');
+
+-- MARKETING / COMUNICAÇÃO
+INSERT INTO cargo (descricao) VALUES 
+('Designer Gráfico'),
+('Social Media'),
+('Redator Publicitário'),
+('Analista de Marketing'),
+('Coordenador de Comunicação'),
+('Diretor de Criação');
+
+-- SERVIÇOS GERAIS
+INSERT INTO cargo (descricao) VALUES 
+('Auxiliar de Serviços Gerais'),
+('Cozinheiro(a)'),
+('Garçom/Garçonete'),
+('Motorista'),
+('Porteiro'),
+('Zelador');
+
+-- CONSTRUÇÃO CIVIL
+INSERT INTO cargo (descricao) VALUES 
+('Pedreiro'),
+('Ajudante de Obras'),
+('Mestre de Obras'),
+('Engenheiro Civil'),
+('Arquiteto'),
+('Técnico em Edificações');
+
+
+
+
 
 
 

@@ -44,8 +44,8 @@ use Core\Library\Session;
             <?php foreach ($aDados as $value): ?>
                 <?php
                     // Define o status filtrável: "fechada" se for "Finalizada", senão "ativa"
-                    $statusOriginal = strtolower($value['statusVaga']);
-                    $statusFiltrado = $statusOriginal === 'finalizada' ? 'fechada' : 'ativa';
+                    $statusOriginal = $value['statusVaga'];
+                    $statusFiltrado = ($statusOriginal == 99 ? 'fechada' : 'ativa');
                 ?>
                 <div class="col vaga"
                     data-descricao="<?= strtolower($value['descricao']) ?>"
