@@ -1,7 +1,5 @@
-<?php
-
+<?php 
 use Core\Library\Session;
-
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -9,6 +7,7 @@ use Core\Library\Session;
     <meta charset="UTF-8">
     <title>Lista de Currículos</title>
 
+    <!-- Estilos principais -->
     <link href="<?= baseUrl() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="<?= baseUrl() ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -18,6 +17,7 @@ use Core\Library\Session;
 </head>
 <body>
 
+    <!-- Título da página -->
     <?= formTitulo("📄 Seus Currículos", true) ?>
 
     <div class="container my-5">
@@ -27,6 +27,7 @@ use Core\Library\Session;
                     <div class="card shadow-lg border-0">
                         <div class="card-body">
                             <h4 class="card-title mb-3">
+                                <!-- Endereço completo -->
                                 <?= htmlspecialchars($value['logradouro']) ?>, <?= htmlspecialchars($value['numero']) ?>
                                 <?= $value['complemento'] ? ' - ' . htmlspecialchars($value['complemento']) : '' ?>
                             </h4>
@@ -34,6 +35,7 @@ use Core\Library\Session;
 
                             <div class="row">
                                 <div class="col-md-6">
+                                    <!-- Dados do candidato -->
                                     <p><strong>Nome Completo:</strong> <?= htmlspecialchars(Session::get("userNome")) ?></p>
                                     <p><strong>Cidade:</strong> <?= htmlspecialchars($value['cidade_id']) ?></p>
                                     <p><strong>Celular:</strong> <?= htmlspecialchars($value['celular']) ?></p>
@@ -41,12 +43,14 @@ use Core\Library\Session;
                                     <p><strong>Sexo:</strong> <?= $value['sexo'] == 'M' ? 'Masculino' : 'Feminino' ?></p>
                                 </div>
                                 <div class="col-md-6">
+                                    <!-- Foto e apresentação -->
                                     <p><strong>Email:</strong> <?= htmlspecialchars($value['email']) ?></p>
                                     <p><strong>Foto:</strong> <img src="<?= baseUrl() . 'imagem.php?file=curriculo/' . $value['foto'] ?>" class="img-thumbnail" height="120" width="240" alt="Imagem Curriculo"></p>
                                     <p><strong>Apresentação Pessoal:</strong><br><span class="text-truncate-multiline"><?= nl2br(htmlspecialchars($value['apresentacaoPessoal'])) ?></span></p>
                                 </div>
                             </div>
 
+                            <!-- Ações -->
                             <div class="mt-3 text-end">
                                 <button class="btn btn-outline-primary btn-sm me-2" onclick='visualizarCurriculo(<?= json_encode($value) ?>)'>
                                     <i class="bi bi-eye"></i> Visualizar
@@ -65,6 +69,7 @@ use Core\Library\Session;
         </div>
     </div>
 
+    <!-- Modal para exibir currículo completo -->
     <div class="modal fade" id="modalCurriculo" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-xl">
             <div class="modal-content paper-style">
@@ -77,6 +82,7 @@ use Core\Library\Session;
         </div>
     </div>
 
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
@@ -89,49 +95,55 @@ use Core\Library\Session;
                 fotoExpandida.scrollIntoView({ behavior: 'smooth' });
             }
         }
-function visualizarCurriculo(dados) {
-    const sexo = dados.sexo === 'M' ? 'Masculino' : 'Feminino';
-    const userNome = "<?= htmlspecialchars(Session::get('userNome')) ?>";
-    const conteudo = `
-        <div class="d-flex justify-content-between flex-wrap">
-            <div style="flex: 1; min-width: 250px;">
-                <p><strong>Nome Completo:</strong> ${userNome}</p>
-                <p><strong>Endereço:</strong> ${dados.logradouro}, ${dados.numero} ${dados.complemento ? '- ' + dados.complemento : ''}</p>
-                <p><strong>Bairro:</strong> ${dados.bairro} - CEP: ${dados.cep}</p>
-                <p><strong>Cidade:</strong> ${dados.cidade_id}</p>
-                <p><strong>Celular:</strong> ${dados.celular}</p>
-                <p><strong>Email:</strong> ${dados.email}</p>
-                <p><strong>Data de Nascimento:</strong> ${dados.dataNascimento}</p>
-                <p><strong>Sexo:</strong> ${sexo}</p>
-                <p><strong>Apresentação Pessoal:</strong><br><span style="word-break: break-word;">${dados.apresentacaoPessoal.replace(/\n/g, "<br>")}</span></p>
-            </div>
-            <div class="text-center ms-4">
-<img 
-  src="<?= baseUrl() ?>imagem.php?file=curriculo/${dados.foto}" 
-  alt="Foto 3x4" 
-  onclick="mostrarFotoCompleta('${dados.foto}')" 
-  class="foto-3x4" 
->
-            </div>
-        </div>
-        <div id="fotoExpandida"></div>
-    `;
-    document.getElementById('conteudoCurriculo').innerHTML = conteudo;
-    document.getElementById('fotoExpandida').style.display = 'none';
-    new bootstrap.Modal(document.getElementById('modalCurriculo')).show();
-}
 
-function mostrarFotoCompleta(foto) {
-    const container = document.getElementById('fotoExpandida');
-    container.innerHTML = `
-        <hr>
-        <p><strong>Foto Completa:</strong></p>
-        <img src="<?= baseUrl() ?>imagem.php?file=curriculo/${foto}" class="img-fluid rounded mt-2" style="max-width: 100%; height: auto;">
-    `;
-    container.style.display = 'block';
-    container.scrollIntoView({ behavior: 'smooth' });
-}
-</script>
+        function visualizarCurriculo(dados) {
+            const sexo = dados.sexo === 'M' ? 'Masculino' : 'Feminino';
+            const userNome = "<?= htmlspecialchars(Session::get('userNome')) ?>";
+
+            // Gera o HTML do currículo completo
+            const conteudo = `
+                <div class="d-flex justify-content-between flex-wrap">
+                    <div style="flex: 1; min-width: 250px;">
+                        <p><strong>Nome Completo:</strong> ${userNome}</p>
+                        <p><strong>Endereço:</strong> ${dados.logradouro}, ${dados.numero} ${dados.complemento ? '- ' + dados.complemento : ''}</p>
+                        <p><strong>Bairro:</strong> ${dados.bairro} - CEP: ${dados.cep}</p>
+                        <p><strong>Cidade:</strong> ${dados.cidade_id}</p>
+                        <p><strong>Celular:</strong> ${dados.celular}</p>
+                        <p><strong>Email:</strong> ${dados.email}</p>
+                        <p><strong>Data de Nascimento:</strong> ${dados.dataNascimento}</p>
+                        <p><strong>Sexo:</strong> ${sexo}</p>
+                        <p><strong>Apresentação Pessoal:</strong><br><span style="word-break: break-word;">${dados.apresentacaoPessoal.replace(/\n/g, "<br>")}</span></p>
+                    </div>
+                    <div class="text-center ms-4">
+                        <img 
+                            src="<?= baseUrl() ?>imagem.php?file=curriculo/${dados.foto}" 
+                            alt="Foto 3x4" 
+                            onclick="mostrarFotoCompleta('${dados.foto}')" 
+                            class="foto-3x4" 
+                        >
+                    </div>
+                </div>
+                <div id="fotoExpandida"></div>
+            `;
+
+            // Insere conteúdo no modal
+            document.getElementById('conteudoCurriculo').innerHTML = conteudo;
+            document.getElementById('fotoExpandida').style.display = 'none';
+            new bootstrap.Modal(document.getElementById('modalCurriculo')).show();
+        }
+
+        // Mostra imagem maior
+        function mostrarFotoCompleta(foto) {
+            const container = document.getElementById('fotoExpandida');
+            container.innerHTML = `
+                <hr>
+                <p><strong>Foto Completa:</strong></p>
+                <img src="<?= baseUrl() ?>imagem.php?file=curriculo/${foto}" class="img-fluid rounded mt-2" style="max-width: 100%; height: auto;">
+            `;
+            container.style.display = 'block';
+            container.scrollIntoView({ behavior: 'smooth' });
+        }
+    </script>
 
 </body>
 </html>
