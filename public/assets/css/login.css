@@ -33,7 +33,7 @@ body {
   z-index: 1;
 }
 
-/* Área visual do login com sombra e padding */
+/* Área visual do login com sombra */
 .login-card {
   width: 340px;
   padding: 30px;
