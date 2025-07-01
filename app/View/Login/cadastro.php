@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login / Registro</title>
     <link rel="stylesheet" href="<?= baseUrl() ?>assets/css/cadastro.css">
-    <script src="<?= baseUrl() ?>assets/js/cadastro.js"></script>
+    <script src="<?= baseUrl() ?>assets/js/cadastro.js"></script> <!-- Meio que puxa o arquivo do JavaScript pra 
+    funcionar a tela de cadastro -->
 </head>
 <body>
     
