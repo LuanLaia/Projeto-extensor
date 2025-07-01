@@ -58,6 +58,7 @@
                             <?php $valorModalidade = setValor("modalidade"); ?>
                             <option value="1" <?= $valorModalidade == "1" ? "selected" : "" ?>>Presencial</option>
                             <option value="2" <?= $valorModalidade == "2" ? "selected" : "" ?>>Remoto</option>
+                            <option value="2" <?= $valorModalidade == "3" ? "selected" : "" ?>>Semi-Presencial</option>
                         </select>
                         <?= setMsgFilderError("modalidade") ?>
                     </div>

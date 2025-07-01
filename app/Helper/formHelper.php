@@ -9,7 +9,7 @@ function formTitulo($titulo, $btnNovo = false)
     if ($btnNovo) {
         $cHtmlBtn = '<a href="' . baseUrl() . $request->getController() . '/form/insert/0" title="Novo" class="btn btn-outline-info text-white">Novo</a>';
     } else {
-        $cHtmlBtn = '<a href="' . baseUrl() . $request->getController() . '" title="Voltar" class="btn btn-outline-info text-white">Voltar</a>';
+        $cHtmlBtn = '<a href="' . baseUrl() . "Sistema" . '" title="Voltar" class="btn btn-outline-info text-white">Voltar</a>';
     }
 
     $cHtml = '  <div class="row bg-primary text-white m-2">

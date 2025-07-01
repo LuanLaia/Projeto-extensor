@@ -1,3 +1,8 @@
+<?php
+
+use Core\Library\Session;
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,7 +18,7 @@
 </head>
 <body>
 
-    <?= formTitulo("📄 Lista de Currículos", true) ?>
+    <?= formTitulo("📄 Seus Currículos", true) ?>
 
     <div class="container my-5">
         <div class="row row-cols-1 g-4">
@@ -29,7 +34,7 @@
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <p><strong>ID:</strong> <?= $value['id'] ?></p>
+                                    <p><strong>Nome Completo:</strong> <?= htmlspecialchars(Session::get("userNome")) ?></p>
                                     <p><strong>Cidade:</strong> <?= htmlspecialchars($value['cidade_id']) ?></p>
                                     <p><strong>Celular:</strong> <?= htmlspecialchars($value['celular']) ?></p>
                                     <p><strong>Data de Nascimento:</strong> <?= htmlspecialchars($value['dataNascimento']) ?></p>
@@ -86,10 +91,11 @@
         }
 function visualizarCurriculo(dados) {
     const sexo = dados.sexo === 'M' ? 'Masculino' : 'Feminino';
+    const userNome = "<?= htmlspecialchars(Session::get('userNome')) ?>";
     const conteudo = `
         <div class="d-flex justify-content-between flex-wrap">
             <div style="flex: 1; min-width: 250px;">
-                <p><strong>ID:</strong> ${dados.id}</p>
+                <p><strong>Nome Completo:</strong> ${userNome}</p>
                 <p><strong>Endereço:</strong> ${dados.logradouro}, ${dados.numero} ${dados.complemento ? '- ' + dados.complemento : ''}</p>
                 <p><strong>Bairro:</strong> ${dados.bairro} - CEP: ${dados.cep}</p>
                 <p><strong>Cidade:</strong> ${dados.cidade_id}</p>

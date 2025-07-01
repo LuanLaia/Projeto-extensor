@@ -1,3 +1,8 @@
+<?php
+
+use Core\Library\Session;
+
+?>
 <!DOCTYPE html> 
 <html lang="pt-BR">
 <head>
@@ -15,7 +20,7 @@
 <body>
 
     <div class="container py-5">
-        <?= formTitulo("🎯 Lista de Vagas", true) ?>
+        <?= formTitulo("🎯 Vagas Publicadas", Session::get("userNivel") == 1 || Session::get("userNivel") == 11) ?>
 
         <!-- Barra de Busca e Filtro -->
         <div class="filter-bar mb-4">
@@ -51,32 +56,43 @@
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title text-primary fw-bold">
                                 <i class="bi bi-briefcase me-2"></i>
-                                ID: <?= $value['id'] ?> - <?= htmlspecialchars($value['descricao']) ?>
+                                 <?= htmlspecialchars($value['descricao']) ?>
                             </h5>
 
                             <p class="card-text"><strong>Sobre:</strong> <?= htmlspecialchars($value['sobreaVaga']) ?></p>
-                            <p class="card-text"><strong>Modalidade:</strong> <?= htmlspecialchars($value['modalidade']) ?></p>
-                            <p class="card-text"><strong>Vínculo:</strong> <?= htmlspecialchars($value['vinculo']) ?></p>
-                            <p class="card-text"><strong>Início:</strong> <?= htmlspecialchars($value['dtInicio']) ?></p>
-                            <p class="card-text"><strong>Fim:</strong> <?= htmlspecialchars($value['dtFim']) ?></p>
+                            <p class="card-text"><strong>Modalidade:</strong> 
+                                <?= $value['modalidade'] == 1 ? 'Presencial' : ($value['modalidade'] == 2 ? 'Remoto' : 'Semi-Presencial') ?>
+                            </p>
+                            <p class="card-text"><strong>Vínculo:</strong> 
+                                <?= $value['vinculo'] == 1 ? 'CLT' : ($value['vinculo'] == 2 ? 'Pessoa Jurídica' : 'Desconhecido') ?>
+                            </p>
+                            <p class="card-text"><strong>Início:</strong> <?= !empty($value['dtInicio']) ? date('d/m/Y', strtotime($value['dtInicio'])) : '-' ?></p>
+                            <p class="card-text"><strong>Fim:</strong> <?= !empty($value['dtFim']) ? date('d/m/Y', strtotime($value['dtFim'])) : '-' ?></p>
                             <p class="card-text">
-                                <strong>Status:</strong>
+                                <strong>Situação:</strong>
                                 <span class="badge bg-<?= $statusFiltrado === 'ativa' ? 'success' : 'secondary' ?>">
-                                    <?= $statusFiltrado === 'fechada' ? 'Fechada' : 'Ativa' ?>
+                                    <?= $statusFiltrado === 'fechada' ? 'Fechada' : 'Aberta' ?>
                                 </span>
                             </p>
 
-                            <!-- Botões -->
+                            
                             <div class="mt-auto d-flex justify-content-end gap-2">
-                                <a href="<?= baseUrl() ?>Vagas/form/view/<?= $value['id'] ?>" class="btn btn-outline-primary btn-sm" title="Visualizar">
-                                    <i class="bi bi-eye"></i>
-                                </a>
-                                <a href="<?= baseUrl() ?>Vagas/form/update/<?= $value['id'] ?>" class="btn btn-outline-warning btn-sm" title="Alterar">
-                                    <i class="bi bi-pencil-square"></i>
-                                </a>
-                                <a href="<?= baseUrl() ?>Vagas/form/delete/<?= $value['id'] ?>" class="btn btn-outline-danger btn-sm" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir esta vaga?')">
-                                    <i class="bi bi-trash"></i>
-                                </a>
+                                <?php $nivel = Session::get("userNivel"); ?>
+                                    <?php if ($nivel == 21 || $nivel == 22): ?> 
+                                        <a href="<?= baseUrl() ?>Vagas/form/view/<?= $value['id'] ?>" class="btn btn-outline-primary btn-sm" title="Visualizar">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                    <?php else: ?>
+                                        <a href="<?= baseUrl() ?>Vagas/form/view/<?= $value['id'] ?>" class="btn btn-outline-primary btn-sm" title="Visualizar">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        <a href="<?= baseUrl() ?>Vagas/form/update/<?= $value['id'] ?>" class="btn btn-outline-warning btn-sm" title="Alterar">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                        <a href="<?= baseUrl() ?>Vagas/form/delete/<?= $value['id'] ?>" class="btn btn-outline-danger btn-sm" title="Excluir" onclick="return confirm('Tem certeza que deseja excluir esta vaga?')">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    <?php endif; ?>
                             </div>
                         </div>
                     </div>
