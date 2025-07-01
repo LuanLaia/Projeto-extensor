@@ -1,0 +1,201 @@
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #e7f1ff;
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+
+.hero {
+  width: 100%;
+  padding: 120px 0;
+  background-color: #0d6efd;
+  text-align: center;
+  color: #ffcc00;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.hero-content h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+}
+
+
+.btn {
+  background-color: #084cd9;
+  color: #ffcc00;
+  padding: 12px 28px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #063bbf;
+}
+
+
+.mensagem-incentivo {
+  margin-top: 40px;
+  color: #fff;
+  text-align: center;
+}
+
+.mensagem-incentivo h3 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #ffcc00;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.mensagem-incentivo p {
+  font-size: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+
+.artigos {
+  padding: 80px 20px;
+  color: #fff;
+  text-align: center;
+}
+
+
+.titulo-secao {
+  color: #ffcc00;
+  font-weight: 700;
+  font-size: 28px;
+  margin-bottom: 40px;
+}
+
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.card {
+  background-color: #0d6efd;
+  border-radius: 10px;
+  padding: 25px;
+  width: 300px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+  color: #ffcc00;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: #fff;
+  font-size: 16px;
+}
+
+
+.avaliacoes {
+  padding: 80px 20px;
+  background-color: #0d6efd;
+  color: #fff;
+  text-align: left;
+}
+
+.avaliacao-conteudo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.avaliacao-texto {
+  flex: 1 1 500px;
+}
+
+.avaliacao-texto h3 {
+  font-size: 24px;
+  color: #ffcc00;
+  margin-bottom: 15px;
+}
+
+.avaliacao-texto p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.avaliacao-imagem {
+  flex: 1 1 400px;
+  text-align: center;
+}
+
+.avaliacao-imagem img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+
+@media (max-width: 900px) {
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .hero-content h2 {
+    font-size: 28px;
+  }
+
+  .avaliacao-conteudo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .avaliacao-texto, .avaliacao-imagem {
+    flex: 1 1 100%;
+  }
+}
