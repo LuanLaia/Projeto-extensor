@@ -17,7 +17,6 @@ use Core\Library\Session;
     <link href="<?= baseUrl() ?>assets/css/formCurriculo.css" rel="stylesheet">
 </head>
 <body>
-    <?php var_dump(Session::get("pessoaFisicaId")) ?>
     <div class="container my-5" >
         <?= formTitulo("📄 Currículo") ?>
 
