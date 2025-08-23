@@ -22,9 +22,10 @@ use Core\Library\Session;
 <body>
 
     <!-- Título da página -->
-    <?= formTitulo("📄 Seus Currículos", true) ?>
+    
 
     <div class="container my-5" >
+        <?= formTitulo("📄 Seus Currículos", true) ?>
         <div class="row row-cols-1 g-4">
             <?php foreach ($aDados as $value): ?>
                 <div class="col" data-aos="fade-up">
