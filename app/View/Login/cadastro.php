@@ -34,35 +34,35 @@
       <button onclick="showForm('usuario')" id="usuarioBtn" class="active">Usuário</button>
       <button onclick="showForm('empresa')" id="empresaBtn">Empresa</button>
     </div>
+    <div class="form-wrapper">
+        <!-- Formulário Usuário -->
+        <form id="form-usuario" class="form active" action="<?= baseUrl() ?>Cadastro/store" method="post">
+        <input type="hidden" name="tipo_cadastro" value="usuario">
+        <input type="text" name="nome" placeholder="Nome completo" required>
+        <input type="text" name="cpf" placeholder="CPF" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <input type="password" name="senha_confirmar" placeholder="Repetir Senha" required>
+        <label><input type="checkbox" name="termos"> Aceito os termos de uso</label>
+        <button type="submit">Registrar</button>
+        </form>
 
-    <!-- Formulário Usuário -->
-    <form id="form-usuario" class="form active" action="<?= baseUrl() ?>Cadastro/store" method="post">
-      <input type="hidden" name="tipo_cadastro" value="usuario">
-      <input type="text" name="nome" placeholder="Nome completo" required>
-      <input type="text" name="cpf" placeholder="CPF" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="password" name="senha" placeholder="Senha" required>
-      <input type="password" name="senha_confirmar" placeholder="Repetir Senha" required>
-      <label><input type="checkbox" name="termos"> Aceito os termos de uso</label>
-      <button type="submit">Registrar</button>
-    </form>
-
-    <!-- Formulário Empresa -->
-    <form id="form-empresa" class="form" action="<?= baseUrl() ?>Cadastro/store" method="post">
-      <input type="hidden" name="tipo_cadastro" value="empresa">
-      <input type="text" name="nome" placeholder="Nome da Empresa" required>
-      <input type="text" name="cnpj" placeholder="CNPJ" required>
-      <input type="email" name="email" placeholder="Email" required>
-      <input type="password" name="senha" placeholder="Senha" required>
-      <input type="password" name="senha_confirmar" placeholder="Repetir Senha" required>
-      <label><input type="checkbox" name="termos"> Aceito os termos de uso</label>
-      <button type="submit">Registrar</button>
-    </form>
+        <!-- Formulário Empresa -->
+        <form id="form-empresa" class="form" action="<?= baseUrl() ?>Cadastro/store" method="post">
+        <input type="hidden" name="tipo_cadastro" value="empresa">
+        <input type="text" name="nome" placeholder="Nome da Empresa" required>
+        <input type="text" name="cnpj" placeholder="CNPJ" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <input type="password" name="senha_confirmar" placeholder="Repetir Senha" required>
+        <label><input type="checkbox" name="termos"> Aceito os termos de uso</label>
+        <button type="submit">Registrar</button>
+        </form>
+    </div>
 
     <p class="login-link">Já tem uma conta? <a href="<?= baseUrl()?>Login">Entrar</a></p>
   </div>
 </div>
-
 <script src="<?= baseUrl() ?>assets/js/cadastro.js"></script>
 </body>
 </html>

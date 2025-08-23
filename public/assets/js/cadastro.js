@@ -1,14 +1,23 @@
 function showForm(tipo) {
-  document.getElementById('form-usuario').classList.remove('active');
-  document.getElementById('form-empresa').classList.remove('active');
-  document.getElementById('usuarioBtn').classList.remove('active');
-  document.getElementById('empresaBtn').classList.remove('active');
+  const usuarioForm = document.getElementById('form-usuario');
+  const empresaForm = document.getElementById('form-empresa');
+  const usuarioBtn = document.getElementById('usuarioBtn');
+  const empresaBtn = document.getElementById('empresaBtn');
+
+  // Remove classes de active
+  usuarioForm.classList.remove('active');
+  empresaForm.classList.remove('active');
+  usuarioBtn.classList.remove('active');
+  empresaBtn.classList.remove('active');
+
+  // Força reflow (para que o browser reconheça a troca antes de aplicar o novo active)
+  void usuarioForm.offsetWidth;
 
   if (tipo === 'usuario') {
-    document.getElementById('form-usuario').classList.add('active');
-    document.getElementById('usuarioBtn').classList.add('active');
+    usuarioForm.classList.add('active');
+    usuarioBtn.classList.add('active');
   } else {
-    document.getElementById('form-empresa').classList.add('active');
-    document.getElementById('empresaBtn').classList.add('active');
+    empresaForm.classList.add('active');
+    empresaBtn.classList.add('active');
   }
 }
