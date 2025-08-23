@@ -7,6 +7,10 @@ use Core\Library\Session;
     <meta charset="UTF-8">
     <title>Lista de Currículos</title>
 
+    <link rel="stylesheet" href="<?= baseUrl() ?>assets/css/home.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
     <!-- Estilos principais -->
     <link href="<?= baseUrl() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="<?= baseUrl() ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -20,7 +24,7 @@ use Core\Library\Session;
     <!-- Título da página -->
     <?= formTitulo("📄 Seus Currículos", true) ?>
 
-    <div class="container my-5">
+    <div class="container my-5" >
         <div class="row row-cols-1 g-4">
             <?php foreach ($aDados as $value): ?>
                 <div class="col" data-aos="fade-up">

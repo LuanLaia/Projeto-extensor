@@ -1,42 +1,114 @@
-body {
-    background: linear-gradient(to right, #d7e1ec, #f3f7f9);
-    font-family: 'Segoe UI', sans-serif;
+<style>
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #0f172a, #1e293b);
+    color: #f8fafc;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 100px;
+}
+
+.container {
+    margin-top: 3rem;
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    color: #f8fafc;
+}
+
+/* CARD */
 .card {
-    border-radius: 15px;
-    transition: transform 0.2s;
+    border-radius: 12px;
+    border: none;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-    transform: scale(1.01);
-}
-
-.btn {
-    border-radius: 8px;
-    font-weight: 500;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
 }
 
 .card-title {
-    font-weight: bold;
+    color: #1e293b;
 }
 
+.card-body p {
+    color: #334155;
+    font-size: 0.95rem;
+}
+
+/* BOTOES */
+.btn-outline-primary {
+    border-color: #10b981;
+    color: #10b981;
+}
+
+.btn-outline-primary:hover {
+    background-color: #10b981;
+    color: #fff;
+}
+
+.btn-outline-warning:hover {
+    background-color: #f59e0b;
+    color: #fff;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ef4444;
+    color: #fff;
+}
+
+/* FOTO */
 .img-thumbnail {
-    border-radius: 10px;
-}
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+    border: none;
+    border-radius: 8px;
+    object-fit: cover;
 }
 
-main {
-    flex-grow: 1;
+.foto-3x4 {
+    width: 120px;
+    height: 160px;
+    border-radius: 8px;
+    object-fit: cover;
+    cursor: pointer;
 }
+
 .text-truncate-multiline {
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Número de linhas antes de truncar */
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    max-height: 4.5em;
 }
+
+.modal-content.paper-style {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    color: #0f172a;
+}
+
+.modal-title {
+    color: #0f172a;
+    font-weight: bold;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .foto-3x4 {
+        width: 100px;
+        height: 130px;
+    }
+}
+</style>
