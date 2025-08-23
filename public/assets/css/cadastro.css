@@ -1,138 +1,133 @@
-/* Atinge todos os elementos HTML */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* Fundo de vídeo */
+.youtube-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -2;
 }
 
-/* Fundo da tela e centralização */
-body {
-    background: #f0f4f8;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    position: relative;
+.youtube-background iframe {
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  pointer-events: none;
 }
 
-/* Cartão de fundo centralizado */
-.background-card {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 420px;
-    height: 560px;
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    z-index: 0;
+/* Overlay escura */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 22, 41, 0.9);
+  z-index: -1;
 }
 
-/* Área principal do formulário */
+/* Container central */
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    width: 350px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    padding: 3rem 2rem 2rem 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-/* Botões de troca entre formulários */
-.tabs {
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+/* Card de cadastro */
+.register-card {
+  background-color: #121e31;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.6);
+  width: 100%;
+  max-width: 420px;
+  color: #fff;
 }
 
-/* Estilo padrão dos botões */
-.tabs button {
-    flex: 1;
-    padding: 12px;
-    background: #e0e0e0;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s;
-    font-weight: bold;
-    border-radius: 8px;
-    font-size: 15px;
-    margin: 0 5px;
-}
-
-/* Botão selecionado */
-.tabs button.active {
-    background: #007BFF;
-    color: white;
-}
-
-/* Esconde formulários */
-.form {
-    display: none;
-    flex-direction: column;
-}
-
-/* Mostra o formulário ativo */
-.form.active {
-    display: flex;
-    flex-direction: column;
-}
-
-/* Campos de entrada */
-input[type="text"],
-input[type="email"],
-input[type="password"] {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-/* Rótulos dos campos */
-label {
-    font-size: 14px;
-    margin-bottom: 10px;
-}
-
-/* Botão de enviar */
-button[type="submit"] {
-    padding: 12px;
-    background: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 15px;
-    transition: background 0.3s;
-}
-
-/* Efeito hover no botão */
-button[type="submit"]:hover {
-    background: #0056b3;
-}
-
-/* Botão de voltar no topo */
 .back-arrow {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    color: #333;
-    text-decoration: none;
-    background: none;
-    z-index: 2;
+  font-size: 1.5rem;
+  color: #fff;
+  text-decoration: none;
 }
 
-/* Remove sublinhado em todos os estados */
-.back-arrow:visited,
-.back-arrow:focus,
-.back-arrow:hover,
-.back-arrow:active {
-    text-decoration: none;
+.title {
+  text-align: center;
+  margin: 0.5rem 0 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1rem;
+}
+
+.tabs button {
+  background: none;
+  border: none;
+  color: #aaa;
+  padding-bottom: 6px;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.tabs button.active {
+  color: #fff;
+  border-color: #00d48f;
+}
+
+.form {
+  display: none;
+  flex-direction: column;
+}
+
+.form.active {
+  display: flex;
+  flex-direction: column;
+}
+
+.form input[type="text"],
+.form input[type="email"],
+.form input[type="password"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: none;
+  border-radius: 6px;
+  background-color: #f1f5f9;
+  font-size: 0.9rem;
+}
+
+.form input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.form button {
+  margin-top: 10px;
+  background-color: #00d48f;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  background-color: #00bd80;
+}
+
+.login-link {
+  margin-top: 1rem;
+  text-align: center;
+  color: #ddd;
+}
+
+.login-link a {
+  color: #00bfff;
+  text-decoration: none;
 }

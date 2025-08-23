@@ -21,7 +21,7 @@ class Cadastro extends ControllerMain
      */
     public function index()
     {
-        return $this->loadView("login/cadastro", [], false);
+        return $this->loadView("login/cadastro", [], true);
     }
 
     /**
