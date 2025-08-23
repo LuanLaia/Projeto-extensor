@@ -1,5 +1,6 @@
 <?php 
     use Core\Library\Session;
+    use Core\Library\Request
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -13,23 +14,35 @@
 </head>
 <body>
 <header>
-    <div class="logo">EMPREGA MURIAÉ</div>
+    <div>
+        <a class="logo" href="<?= baseUrl() ?>Home">EMPREGA MURIAÉ</a>
+    </div>
     <nav>
+        
         <ul>
-            <?php if (Session::get("userId")): ?>
-                <li><a href="<?= baseUrl() ?>Sistema">Home</a></li>
-                <li><a href="<?= baseUrl() ?>Vagas">Vagas</a></li>
-                <li><a href="<?= baseUrl() ?>#">Sobre Nós</a></li>
-            <?php if (Session::get("userNivel") == 21): ?>
-                 <li >
-                    <a href="<?= baseUrl() ?>Curriculo">Currículos</a>
-                 </li>
-            <?php endif; ?>
-                <li><a  href="<?= baseUrl() ?>login/signOut">Sair</a></li> 
+            <?php if ($this->request->getController() == "Login"):  ?>  
             <?php else: ?>
-                <li class="nav-item">
-                    <a class="login-btn" href="<?= baseUrl() ?>Login">Login</a>
-                </li>
+                <?php if (Session::get("userId")): ?>
+                    <li><a href="<?= baseUrl() ?>Sistema">Home</a></li>
+                    <li><a href="<?= baseUrl() ?>Vagas">Vagas</a></li>
+                    <li><a href="<?= baseUrl() ?>#">Sobre Nós</a></li>
+                <?php if (Session::get("userNivel") == 21): ?>
+                    <li >
+                        <a href="<?= baseUrl() ?>Curriculo">Currículos</a>
+                    </li>
+                <?php endif; ?>
+                    <li><a  href="<?= baseUrl() ?>login/signOut">Sair</a></li> 
+                <?php else: ?>
+                    <?php if ($this->request->getController()== "Cadastro"):  ?> 
+                       <li class="nav-item">
+                            <a class="login-btn" href="<?= baseUrl() ?>Login">Registrar</a>
+                        </li> 
+                    <?php else: ?>
+                        <li class="nav-item">
+                            <a class="login-btn" href="<?= baseUrl() ?>Login">Login</a>
+                        </li>
+                    <?php endif; ?>
+                <?php endif; ?>
             <?php endif; ?>
         </ul>
     </nav>

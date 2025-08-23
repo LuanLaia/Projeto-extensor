@@ -19,3 +19,33 @@ header {
     z-index: 10;
     background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
 }
+a.logo {
+    color: #fff;                   /* mantém a cor branca */
+    text-decoration: none;        /* remove sublinhado */
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    display: inline-block;
+}
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.logo:hover {
+    color: #ccc; /* Cinza ao passar o mouse */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.logo:focus,
+.logo:active {
+    color: #fff; /* Quando clicado */
+    text-decoration: none;
+}
+
+
+

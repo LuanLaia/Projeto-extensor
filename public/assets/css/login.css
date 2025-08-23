@@ -1,132 +1,119 @@
-/* Atinge todos os elementos HTML */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
-
-/* Define fundo da página e centraliza o conteúdo */
+/* Fonte e base */
 body {
-  background-color: #f0f4f8;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-/* Cartão branco de fundo centralizado */
-.background-card {
-  position: absolute;
-  width: 400px;
-  height: 440px;
-  background-color: #ffffff;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  z-index: 0;
+/* Fundo do YouTube */
+.youtube-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
-/* Container principal do login (fica acima do fundo) */
+.youtube-background iframe {
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+}
+
+/* Sobreposição escura */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9));
+}
+
+/* Card do Login */
 .login-container {
-  position: relative;
-  z-index: 1;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Área visual do login com sombra */
 .login-card {
-  width: 340px;
-  padding: 30px;
-  border-radius: 20px;
-  background-color: #ffffff;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    background-color: #1e293b;
+    color: #f1f5f9;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
 }
 
-/* Título centralizado e azul */
-.title {
-  text-align: center;
-  color: #007BFF;
-  margin-bottom: 25px;
+.login-card .title {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
 
-/* Espaçamento entre os campos */
 .input-group {
-  margin-bottom: 15px;
+    margin-bottom: 1rem;
 }
 
-/* Estiliza campos de e-mail e senha */
-input[type="email"],
-input[type="password"] {
-  width: 100%;
-  padding: 12px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    background-color: #f1f5f9;
+    color: #0f172a;
+    font-weight: 500;
 }
 
-/* Botão azul de login */
 .btn-login {
-  width: 100%;
-  padding: 12px;
-  background-color: #007BFF;
-  color: white;
-  font-weight: bold;
-  border: none;
-  border-radius: 8px;
-  font-size: 15px;
-  cursor: pointer;
-  margin-top: 10px;
-  transition: background-color 0.3s;
+    background-color: #10b981;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
-/* Efeito hover do botão de login */
 .btn-login:hover {
-  background-color: #0056b3;
+    background-color: #059669;
 }
 
-/* Texto abaixo do botão com link de registro */
-.register-link {
-  margin-top: 15px;
-  text-align: center;
-  font-size: 14px;
-  color: #555;
+/* Links */
+a {
+    color: #38bdf8;
+    text-decoration: none;
 }
 
-/* Link do registro com cor azul e sem sublinhado */
-.register-link a {
-  color: #007BFF;
-  text-decoration: none;
+a:hover {
+    text-decoration: underline;
 }
 
-/* Efeito hover no link do registro */
-.register-link a:hover {
-  text-decoration: underline;
-}
-
-/* Ícone de voltar no canto superior esquerdo */
+/* Setinha de voltar */
 .back-arrow {
-  position: absolute;
-  top: 20px;
-  left: 25px;
-  font-size: 22px;
-  color: #007BFF;
-  text-decoration: none;
-  font-weight: bold;
-  background: none;
+    font-size: 1.2rem;
+    text-decoration: none;
+    color: #38bdf8;
+    display: inline-block;
+    margin-bottom: 10px;
 }
 
-/* Hover no ícone de voltar */
-.back-arrow:hover {
-  color: #0056b3;
+.register-link {
+    margin-top: 1.5rem;
+    text-align: center;
 }
 
-/* Link dentro de <h6> com estilo azul */
-h6 a {
-  text-decoration: none;
-  color: #007BFF;
-}
-
-/* Hover para o link do <h6> */
-h6 a:hover {
-  text-decoration: underline;
+/* Responsivo */
+@media (max-width: 480px) {
+    .login-card {
+        padding: 2rem 1rem;
+    }
 }
