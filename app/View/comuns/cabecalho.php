@@ -10,6 +10,8 @@
     <link href="<?= baseUrl() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script src="<?= baseUrl() ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link href="<?= baseUrl() ?>assets/css/cabecalho.css" rel="stylesheet">
+</head>
+<body>
 <header>
     <div class="logo">EMPREGA MURIAÉ</div>
     <nav>
