@@ -27,8 +27,10 @@
 <!-- Card de cadastro -->
 <div class="container">
   <div class="register-card">
-    <a href="<?= baseUrl()?>Home" class="back-arrow">←</a>
-    <h2 class="title">Cadastro</h2>
+    <div class="title-with-back">
+      <a href="<?= baseUrl()?>Home" class="back-arrow">←</a>
+      <h2 class="title">Cadastro</h2>
+    </div>
 
     <div class="tabs">
       <button onclick="showForm('usuario')" id="usuarioBtn" class="active">Usuário</button>
@@ -58,9 +60,11 @@
         <label><input type="checkbox" name="termos"> Aceito os termos de uso</label>
         <button type="submit">Registrar</button>
         </form>
-    </div>
 
+        
+    </div>
     <p class="login-link">Já tem uma conta? <a href="<?= baseUrl()?>Login">Entrar</a></p>
+    
   </div>
 </div>
 <script src="<?= baseUrl() ?>assets/js/cadastro.js"></script>

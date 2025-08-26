@@ -9,8 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Emprega Muriaé">
     <link href="<?= baseUrl() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <script src="<?= baseUrl() ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?= baseUrl() ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <link href="<?= baseUrl() ?>assets/css/cabecalho.css" rel="stylesheet">
+    <script src="<?= baseUrl() ?>assets/js/cabecalho.js"></script>
 </head>
 <body>
 <header>
@@ -29,7 +32,15 @@
                     <a href="<?= baseUrl() ?>Curriculo">Currículos</a>
                 </li>
             <?php endif; ?>
-                <li><a  href="<?= baseUrl() ?>login/signOut">Sair</a></li> 
+                <div class="user-dropdown">
+                    <button class="dropdown-toggle" onclick="toggleDropdown()">
+                        <i class="bi bi-person-circle"></i>
+                    </button>
+                    <ul class="dropdown-menu" id="dropdownMenu">
+                        <li><a href="<?= baseUrl() ?>Perfil">Meu Perfil</a></li>
+                        <li><a href="<?= baseUrl() ?>login/signOut">Sair</a></li>
+                    </ul>
+                </div> 
             <?php else: ?>
                 <?php if ($this->request->getController() == "Login"):  ?> 
                     <li class="nav-item">
@@ -44,3 +55,5 @@
         </ul>
     </nav>
 </header>
+
+

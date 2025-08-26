@@ -32,8 +32,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  padding-bottom: 80px; 
+  padding-top: 80px;
+  box-sizing: border-box;
 }
+
 
 /* Card de cadastro */
 .register-card {
@@ -152,6 +156,30 @@
 }
 .form-wrapper {
   position: relative;
-  min-height: 420px; /* altura mínima para evitar 'pulo' ao trocar de formulário */
+  min-height: 350px; /* altura mínima para evitar 'pulo' ao trocar de formulário */
 }
+.title-with-back {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title-with-back .back-arrow {
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  color: #38bdf8;
+  text-decoration: none;
+  padding-left: 5px;
+}
+
+.title-with-back .title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+}
+
 

@@ -18,10 +18,18 @@ body {
 }
 
 .youtube-background iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
     width: 100vw;
-    height: 100vh;
+    height: 56.25vw; /* Proporção 16:9 */
+    min-width: 177.77vh;
+    min-height: 100vh;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
     pointer-events: none;
 }
+
 
 /* Sobreposição escura */
 .overlay {
@@ -121,3 +129,29 @@ li a:hover {
         padding: 2rem 1rem;
     }
 }
+
+.title-with-back {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.title-with-back .back-arrow {
+  position: absolute;
+  left: 0;
+  font-size: 1.5rem;
+  color: #38bdf8;
+  text-decoration: none;
+  padding-left: 5px;
+}
+
+.title-with-back .title {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+}
+

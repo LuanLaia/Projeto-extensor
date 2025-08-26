@@ -1,15 +1,4 @@
-<footer>
-    <div class="footer-text">
-        &copy; 2025 Emprega Muriaé. Todos os direitos reservados.
-    </div>
-    <div class="social-links">
-        <a href="#">Instagram</a>
-        <a href="#">LinkedIn</a>
-        <a href="#">Twitter</a>
-    </div>
-</footer>
-<style>
-    footer {
+footer {
     width: 100%;
     padding: 1.5rem 5%;
     display: flex;
@@ -38,4 +27,3 @@
     color: #fff;
     transform: scale(1.1);
 }
-</style>

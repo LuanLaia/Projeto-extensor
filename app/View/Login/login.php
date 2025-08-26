@@ -30,8 +30,11 @@
   <!-- 📄 Formulário de Login -->
   <div class="login-container">
     <div class="login-card">
-      <a href="<?= baseUrl() ?>Home" class="back-arrow">&#8592;</a>
-      <h3 class="title">Login</h3>
+      <div class="title-with-back">
+        <a href="<?= baseUrl() ?>Home" class="back-arrow">&#8592;</a>
+        <h2 class="title">Login</h2>
+      </div>
+
       
       <form action="<?= baseUrl() ?>login/signIn" method="post">
         <div class="input-group">
