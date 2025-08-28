@@ -27,7 +27,7 @@
     <!-- ========== Conteúdo Principal (Adaptado para a home logada) ========== -->
     <main class="content-logged-in">
         <div class="hero">
-            <h1>Seja bem-vindo ao <strong>Descubra Muriaé</strong></h1>
+            <h1>Seja bem-vindo ao <strong>Emprega Muriaé</strong></h1>
             <p class="lead">O portal que conecta talentos e oportunidades na nossa cidade!</p>
         
             <!-- IMAGEM DESTACADA -->
