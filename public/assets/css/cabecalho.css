@@ -14,16 +14,16 @@ header nav {
     display: flex;
     align-items: center;
 }
-
+/* MODIFICADO - Regra para o link da logo */
 a.logo {
+    display: flex;         /* <-- MUDANÇA: Alinha imagem e texto lado a lado */
+    align-items: center;   /* <-- MUDANÇA: Centraliza verticalmente a imagem e o texto */
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.5rem;
-    padding: 6px 12px;
-    border-radius: 6px;
     transition: background-color 0.3s ease;
-    display: inline-block;
+    /* O 'display: inline-block' e o 'padding' foram removidos para um melhor controle */
 }
 
 .logo:hover {
@@ -112,4 +112,9 @@ nav ul li a:hover {
 .user-dropdown .dropdown-menu li a:hover {
     background-color: #00d48f;
     color: #000;
+}
+/* NOVO - Regra específica para a imagem da logo */
+.logo-img {
+    height: 45px;         /* <-- CONTROLE O TAMANHO DA LOGO AQUI */
+    margin-right: 12px;   /* <-- Espaço entre a imagem e o texto */
 }

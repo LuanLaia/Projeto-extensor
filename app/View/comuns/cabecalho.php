@@ -5,6 +5,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+    <link rel="icon" href="<?= baseUrl() ?>assets/img/favicon.png" type="image/png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Emprega Muriaé">
@@ -18,7 +19,8 @@
 <body>
 <header>
     <div>
-        <a class="logo" href="<?= baseUrl() ?>Home">EMPREGA MURIAÉ</a>
+ <a class="logo-container" href="<?= baseUrl() ?>Home">
+ <img src="<?= baseUrl() ?>assets/img/logo.png" alt="Emprega Muriaé Logo" style="height: 100px;"> </a>
     </div>
     <nav>
         

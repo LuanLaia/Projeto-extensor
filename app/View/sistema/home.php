@@ -31,7 +31,7 @@
             <p class="lead">O portal que conecta talentos e oportunidades na nossa cidade!</p>
         
             <!-- IMAGEM DESTACADA -->
-            <img src="<?= baseUrl() ?>assets/img/logodescubramuriaé.png" alt="Logo Descubra Muriaé">
+            <img src="<?= baseUrl() ?>assets/img/logoempregamuriae.png" alt="Logo Emprega Muriaé">
         
             <div class="btn-home">
                 <a href="<?= baseUrl() ?>Vagas" class="btn btn-light">Ver Vagas</a>
